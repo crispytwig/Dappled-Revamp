@@ -6,7 +6,8 @@
   "mixins": [
     "FoxGroupDataMixin",
     "FoxMixin",
-    "OverworldBiomeBuilderMixin"
+    "OverworldBiomeBuilderMixin",
+    "ShelfMushroomDecoratorMixin"
   ],
   "client": [
     "client.FoxRendererMixin",
