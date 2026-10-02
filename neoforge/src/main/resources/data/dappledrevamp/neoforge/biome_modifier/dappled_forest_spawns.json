@@ -1,0 +1,11 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": "minecraft:dappled_forest",
+  "spawners": [
+    {
+      "type": "minecraft:wolf",
+      "count": 4,
+      "weight": 5
+    }
+  ]
+}

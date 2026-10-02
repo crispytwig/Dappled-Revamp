@@ -7,8 +7,16 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.attachment.v1.AttachmentRegistry;
 import net.fabricmc.fabric.api.attachment.v1.AttachmentSyncPredicate;
 import net.fabricmc.fabric.api.attachment.v1.AttachmentType;
+import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
+import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.codec.ByteBufCodecs;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.entity.EntityTypes;
+import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.animal.fox.Fox;
+import net.minecraft.world.level.biome.Biomes;
+import net.minecraft.world.level.levelgen.GenerationStep;
 
 public class DappledRevampFabric implements ModInitializer, GreyFoxStorage {
     private static final AttachmentType<Boolean> GREY = AttachmentRegistry.create(
@@ -21,6 +29,7 @@ public class DappledRevampFabric implements ModInitializer, GreyFoxStorage {
     @Override
     public void onInitialize() {
         DappledRevamp.init(this);
+        BiomeModifications.addSpawn(BiomeSelectors.includeByKey(Biomes.DAPPLED_FOREST), MobCategory.CREATURE, EntityTypes.WOLF, 5, 4, 4);
     }
 
     @Override
