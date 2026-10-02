@@ -1,0 +1,43 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "condition": {
+        "type": "minecraft:survives_explosion"
+      },
+      "entries": [
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "condition": {
+                "type": "minecraft:match_block",
+                "blocks": "minecraft:poplar_sapling",
+                "state": {
+                  "color": "orange"
+                }
+              },
+              "name": "minecraft:poplar_sapling"
+            },
+            {
+              "type": "minecraft:item",
+              "modifier": [
+                {
+                  "type": "minecraft:copy_state",
+                  "block": "minecraft:poplar_sapling",
+                  "properties": [
+                    "color"
+                  ]
+                }
+              ],
+              "name": "minecraft:poplar_sapling"
+            }
+          ]
+        }
+      ],
+      "rolls": 1
+    }
+  ],
+  "random_sequence": "minecraft:blocks/poplar_sapling"
+}

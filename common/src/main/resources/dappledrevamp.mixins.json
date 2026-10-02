@@ -4,11 +4,15 @@
   "compatibilityLevel": "JAVA_25",
   "minVersion": "0.8",
   "mixins": [
+    "BlockBehaviourMixin",
     "FoxGroupDataMixin",
     "FoxMixin",
+    "ItemStackMixin",
     "OverworldBiomeBuilderMixin",
+    "SaplingBlockMixin",
     "ShelfMushroomDecoratorMixin",
     "SpreadingSnowyBlockMixin",
+    "TreeGrowerMixin",
     "VegetationPatchFeatureMixin"
   ],
   "client": [
