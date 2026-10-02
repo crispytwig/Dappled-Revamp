@@ -30,7 +30,7 @@ public class DappledRevampFabric implements ModInitializer, GreyFoxStorage {
     public void onInitialize() {
         DappledRevamp.init(this);
 
-        for (String feature : new String[]{"red_mushroom", "patch_pumpkin", "patch_berry_bush"}) {
+        for (String feature : new String[]{"moss_patch", "red_mushroom","patch_pumpkin", "patch_berry_bush"}) {
             BiomeModifications.addFeature(
                 BiomeSelectors.includeByKey(Biomes.DAPPLED_FOREST),
                 GenerationStep.Decoration.VEGETAL_DECORATION,

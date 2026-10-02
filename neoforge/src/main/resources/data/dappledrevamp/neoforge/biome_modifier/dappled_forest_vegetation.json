@@ -2,6 +2,7 @@
   "type": "neoforge:add_features",
   "biomes": "minecraft:dappled_forest",
   "features": [
+    "dappledrevamp:moss_patch",
     "dappledrevamp:red_mushroom",
     "dappledrevamp:patch_pumpkin",
     "dappledrevamp:patch_berry_bush"

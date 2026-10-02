@@ -7,9 +7,12 @@
     "FoxGroupDataMixin",
     "FoxMixin",
     "OverworldBiomeBuilderMixin",
-    "ShelfMushroomDecoratorMixin"
+    "ShelfMushroomDecoratorMixin",
+    "SpreadingSnowyBlockMixin",
+    "VegetationPatchFeatureMixin"
   ],
   "client": [
+    "client.BlockColorsMixin",
     "client.FoxRendererMixin",
     "client.FoxRenderStateMixin"
   ],
