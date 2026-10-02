@@ -1,0 +1,18 @@
+{
+  "required": true,
+  "package": "com.crispytwig.dappledrevamp.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "minVersion": "0.8",
+  "mixins": [
+    "FoxGroupDataMixin",
+    "FoxMixin",
+    "OverworldBiomeBuilderMixin"
+  ],
+  "client": [
+    "client.FoxRendererMixin",
+    "client.FoxRenderStateMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

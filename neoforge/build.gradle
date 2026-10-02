@@ -1,0 +1,24 @@
+plugins {
+    id 'multiloader-loader'
+    id 'net.neoforged.moddev'
+}
+
+neoForge {
+    version = neo_version
+    runs {
+        configureEach {
+            ideName = "NeoForge ${it.name.capitalize()} (${project.path})"
+        }
+        client {
+            client()
+            gameDirectory = project.file('run')
+        }
+    }
+    mods {
+        "${mod_id}" {
+            sourceSet sourceSets.main
+        }
+    }
+}
+
+applyLoaderAttribute('neoforge', ['apiElements', 'runtimeElements', 'sourcesElements'], ['jarJar'])

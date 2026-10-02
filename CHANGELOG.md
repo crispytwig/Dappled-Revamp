@@ -1,0 +1,5 @@
+- Added **Grey Foxes**.
+  - Grey Foxes are skins of basic Foxes, but spawn in Dappled Forests.
+- **Dappled Forests** are now larger and more consistent, similar to Taigas and Forests.
+  - Their placement has changed from being small strips within Plains to spawning between Taigas and Plains as a transition biome.
+  - They replace the Forest biome in cold climates; Forests still generate in warmer areas.
