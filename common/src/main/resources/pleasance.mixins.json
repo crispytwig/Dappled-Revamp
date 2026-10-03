@@ -1,0 +1,49 @@
+{
+  "required": true,
+  "package": "com.crispytwig.pleasance.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "minVersion": "0.8",
+  "mixins": [
+    "BlockBehaviourMixin",
+    "BlockMixin",
+    "BlockPropertiesAccessor",
+    "BlockStateBaseMixin",
+    "ChickenMixin",
+    "ComposterBlockMixin",
+    "ComposterInputContainerMixin",
+    "EntityMixin",
+    "FishingHookAccessor",
+    "FishingHookMixin",
+    "FishingRodItemMixin",
+    "FlowerPotBlockMixin",
+    "FoxMixin",
+    "ItemStackMixin",
+    "LivingEntityInvoker",
+    "OverworldBiomeBuilderMixin",
+    "PotionItemMixin",
+    "PumpkinHeadMobMixin",
+    "ShelfMushroomDecoratorMixin",
+    "SpreadingSnowyBlockMixin",
+    "TreeGrowerMixin",
+    "VegetationPatchFeatureMixin"
+  ],
+  "client": [
+    "client.BlockModelFeatureRendererMixin",
+    "client.CuboidItemModelWrapperMixin",
+    "client.FirstPersonHandsAndItemsRendererMixin",
+    "client.FoxRendererMixin",
+    "client.FoxRenderStateMixin",
+    "client.GuiGraphicsExtractorMixin",
+    "client.HumanoidMobRendererMixin",
+    "client.HumanoidModelMixin",
+    "client.HumanoidRenderStateMixin",
+    "client.ItemFeatureRendererMixin",
+    "client.MaterialBakerMixin",
+    "client.ModelBlockRendererMixin",
+    "client.ModelManagerMixin",
+    "client.UnbakedCuboidGeometryMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

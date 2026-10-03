@@ -1,0 +1,21 @@
+{
+  "item.worm.bait": {
+    "sounds": [
+      "pleasance:item/worm/rod1",
+      "pleasance:item/worm/rod2",
+      "pleasance:item/worm/rod3",
+      "pleasance:item/worm/rod4"
+    ],
+    "subtitle": "subtitles.pleasance.item.worm.bait"
+  },
+  "item.worm.hook": {
+    "sounds": [
+      "pleasance:item/worm/hook1",
+      "pleasance:item/worm/hook2",
+      "pleasance:item/worm/hook3",
+      "pleasance:item/worm/hook4",
+      "pleasance:item/worm/hook5"
+    ],
+    "subtitle": "subtitles.pleasance.item.worm.hook"
+  }
+}

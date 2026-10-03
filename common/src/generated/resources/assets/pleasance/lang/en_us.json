@@ -1,0 +1,20 @@
+{
+  "block.pleasance.orange_poplar_leaf_layer": "Orange Poplar Leaf Layer",
+  "block.pleasance.patchy_grass": "Patchy Grass",
+  "block.pleasance.patchy_podzol": "Patchy Podzol",
+  "block.pleasance.red_poplar_leaf_layer": "Red Poplar Leaf Layer",
+  "block.pleasance.regolith": "Regolith",
+  "block.pleasance.worm_bin": "Worm Bin",
+  "block.pleasance.yellow_poplar_leaf_layer": "Yellow Poplar Leaf Layer",
+  "entity.pleasance.worm": "Worm",
+  "item.pleasance.baited_rod": "Baited Rod",
+  "item.pleasance.moist": "Moist %s",
+  "item.pleasance.worm": "Worm",
+  "item.pleasance.worm_bucket": "Worm Bucket",
+  "item.pleasance.worm_spawn_egg": "Worm Spawn Egg",
+  "subtitles.pleasance.item.worm.bait": "Worm baited",
+  "subtitles.pleasance.item.worm.hook": "Worm wriggles",
+  "tooltip.pleasance.poplar_sapling.orange": "Orange Poplar",
+  "tooltip.pleasance.poplar_sapling.red": "Red Poplar",
+  "tooltip.pleasance.poplar_sapling.yellow": "Yellow Poplar"
+}

@@ -1,0 +1,245 @@
+{
+  "elements": [
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "pleasance:village/dappled/zombie/houses/dappled_small_house_1",
+        "processors": "pleasance:zombie_dappled",
+        "projection": "rigid"
+      },
+      "weight": 4
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "pleasance:village/dappled/zombie/houses/dappled_small_house_2",
+        "processors": "pleasance:zombie_dappled",
+        "projection": "rigid"
+      },
+      "weight": 4
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "pleasance:village/dappled/zombie/houses/dappled_small_house_3",
+        "processors": "pleasance:zombie_dappled",
+        "projection": "rigid"
+      },
+      "weight": 4
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "pleasance:village/dappled/zombie/houses/dappled_small_house_4",
+        "processors": "pleasance:zombie_dappled",
+        "projection": "rigid"
+      },
+      "weight": 4
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "pleasance:village/dappled/zombie/houses/dappled_small_house_5",
+        "processors": "pleasance:zombie_dappled",
+        "projection": "rigid"
+      },
+      "weight": 4
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "pleasance:village/dappled/zombie/houses/dappled_medium_house_1",
+        "processors": "pleasance:zombie_dappled",
+        "projection": "rigid"
+      },
+      "weight": 2
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "pleasance:village/dappled/zombie/houses/dappled_medium_house_2",
+        "processors": "pleasance:zombie_dappled",
+        "projection": "rigid"
+      },
+      "weight": 2
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "pleasance:village/dappled/zombie/houses/dappled_medium_house_3",
+        "processors": "pleasance:zombie_dappled",
+        "projection": "rigid"
+      },
+      "weight": 2
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "pleasance:village/dappled/zombie/houses/dappled_medium_house_4",
+        "processors": "pleasance:zombie_dappled",
+        "projection": "rigid"
+      },
+      "weight": 2
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "pleasance:village/dappled/houses/dappled_butcher_shop_1",
+        "processors": "pleasance:zombie_dappled",
+        "projection": "rigid"
+      },
+      "weight": 2
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "pleasance:village/dappled/zombie/houses/dappled_tool_smith_1",
+        "processors": "pleasance:zombie_dappled",
+        "projection": "rigid"
+      },
+      "weight": 2
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "pleasance:village/dappled/houses/dappled_fletcher_house_1",
+        "processors": "pleasance:zombie_dappled",
+        "projection": "rigid"
+      },
+      "weight": 2
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "pleasance:village/dappled/zombie/houses/dappled_shepherds_house_1",
+        "processors": "pleasance:zombie_dappled",
+        "projection": "rigid"
+      },
+      "weight": 2
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "pleasance:village/dappled/houses/dappled_armorer_house_1",
+        "processors": "pleasance:zombie_dappled",
+        "projection": "rigid"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "pleasance:village/dappled/zombie/houses/dappled_fisher_cottage_1",
+        "processors": "pleasance:zombie_dappled",
+        "projection": "rigid"
+      },
+      "weight": 2
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "pleasance:village/dappled/houses/dappled_tannery_1",
+        "processors": "pleasance:zombie_dappled",
+        "projection": "rigid"
+      },
+      "weight": 2
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "pleasance:village/dappled/zombie/houses/dappled_cartographer_house_1",
+        "processors": "pleasance:zombie_dappled",
+        "projection": "rigid"
+      },
+      "weight": 2
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "pleasance:village/dappled/zombie/houses/dappled_library_1",
+        "processors": "pleasance:zombie_dappled",
+        "projection": "rigid"
+      },
+      "weight": 2
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "pleasance:village/dappled/houses/dappled_masons_house_1",
+        "processors": "pleasance:zombie_dappled",
+        "projection": "rigid"
+      },
+      "weight": 2
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "pleasance:village/dappled/houses/dappled_weaponsmith_1",
+        "processors": "pleasance:zombie_dappled",
+        "projection": "rigid"
+      },
+      "weight": 2
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "pleasance:village/dappled/zombie/houses/dappled_weaponsmith_2",
+        "processors": "pleasance:zombie_dappled",
+        "projection": "rigid"
+      },
+      "weight": 2
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "pleasance:village/dappled/zombie/houses/dappled_temple_1",
+        "processors": "pleasance:zombie_dappled",
+        "projection": "rigid"
+      },
+      "weight": 2
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "pleasance:village/dappled/houses/dappled_large_farm_1",
+        "processors": "pleasance:zombie_dappled",
+        "projection": "rigid"
+      },
+      "weight": 6
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "pleasance:village/dappled/zombie/houses/dappled_large_farm_2",
+        "processors": "pleasance:zombie_dappled",
+        "projection": "rigid"
+      },
+      "weight": 6
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "pleasance:village/dappled/houses/dappled_small_farm_1",
+        "processors": "pleasance:zombie_dappled",
+        "projection": "rigid"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "pleasance:village/dappled/houses/dappled_animal_pen_1",
+        "processors": "pleasance:zombie_dappled",
+        "projection": "rigid"
+      },
+      "weight": 2
+    },
+    {
+      "element": {
+        "element_type": "minecraft:empty_pool_element"
+      },
+      "weight": 6
+    }
+  ],
+  "fallback": "pleasance:village/dappled/terminators"
+}

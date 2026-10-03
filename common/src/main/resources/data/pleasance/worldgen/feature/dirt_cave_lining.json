@@ -1,0 +1,28 @@
+{
+  "buried_replaceable": "#minecraft:grass_blocks",
+  "depth": 16,
+  "edge_variation": 3,
+  "replaceable": "#minecraft:base_stone_overworld",
+  "state": "minecraft:dirt",
+  "transition": [
+    {
+      "id": "pleasance:regolith",
+      "properties": {
+        "segment": "top"
+      }
+    },
+    {
+      "id": "pleasance:regolith",
+      "properties": {
+        "segment": "middle"
+      }
+    },
+    {
+      "id": "pleasance:regolith",
+      "properties": {
+        "segment": "bottom"
+      }
+    }
+  ],
+  "type": "pleasance:cave_lining"
+}

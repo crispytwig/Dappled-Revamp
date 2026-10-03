@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "segment=bottom": {
+      "model": "pleasance:block/regolith_bottom"
+    },
+    "segment=middle": {
+      "model": "pleasance:block/regolith"
+    },
+    "segment=top": {
+      "model": "pleasance:block/regolith_top"
+    }
+  }
+}

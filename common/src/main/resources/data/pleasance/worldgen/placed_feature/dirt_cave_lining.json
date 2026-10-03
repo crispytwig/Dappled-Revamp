@@ -1,0 +1,12 @@
+{
+  "feature": "pleasance:dirt_cave_lining",
+  "placement": [
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "OCEAN_FLOOR_WG"
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:weighted_random_selector",
+  "features": [
+    {
+      "data": "pleasance:red_poplar_bush",
+      "weight": 200
+    },
+    {
+      "data": "pleasance:orange_poplar_bush",
+      "weight": 240
+    },
+    {
+      "data": "pleasance:yellow_poplar_bush",
+      "weight": 90
+    }
+  ]
+}

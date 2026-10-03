@@ -1,3 +1,5 @@
+## 1.0 - Dappled Forests
+
 ### Entities
 - Added **Grey Foxes**.
   - Grey Foxes are skins of basic Foxes, but spawn in Dappled Forests.
@@ -18,7 +20,7 @@
   - Added **Baited Rods**.
     - Holding a Worm or Worm Bucket in one hand and using a Fishing Rod in the other baits the Fishing Rod, turning it into a Baited Rod. Using a Fishing Rod on a Worm entity and reeling it in also baits it.
       - Baited Rods can not be cast for 1 second after baiting.
-      - ***For mod/pack authors,*** which items count as bait is controlled by the `dappledrevamp:fishing_bait` item tag.
+      - ***For mod/pack authors,*** which items count as bait is controlled by the `pleasance:fishing_bait` item tag.
     - Baited Rods act like an early-game form of the **Lure** enchantment, causing quicker bites while fishing.
       - This stacks with real Lure enchantments.
     - When something is reeled in after using the Baited Rod, it turns back into a normal Fishing Rod and consumes durability like normal.

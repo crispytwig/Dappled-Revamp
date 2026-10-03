@@ -1,0 +1,121 @@
+{
+  "parent": "minecraft:block/block",
+  "elements": [
+    {
+      "faces": {
+        "down": {
+          "cullface": "down",
+          "texture": "#bottom"
+        },
+        "east": {
+          "cullface": "east",
+          "texture": "#side"
+        },
+        "north": {
+          "cullface": "north",
+          "texture": "#side"
+        },
+        "south": {
+          "cullface": "south",
+          "texture": "#side"
+        },
+        "up": {
+          "cullface": "up",
+          "texture": "#top",
+          "tintindex": 0
+        },
+        "west": {
+          "cullface": "west",
+          "texture": "#side"
+        }
+      },
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "faces": {
+        "east": {
+          "cullface": "east",
+          "texture": "#overlay",
+          "tintindex": 0
+        },
+        "north": {
+          "cullface": "north",
+          "texture": "#overlay",
+          "tintindex": 0
+        },
+        "south": {
+          "cullface": "south",
+          "texture": "#overlay",
+          "tintindex": 0
+        },
+        "west": {
+          "cullface": "west",
+          "texture": "#overlay",
+          "tintindex": 0
+        }
+      },
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "faces": {
+        "east": {
+          "cullface": "east",
+          "texture": "#podzol_overlay"
+        },
+        "north": {
+          "cullface": "north",
+          "texture": "#podzol_overlay"
+        },
+        "south": {
+          "cullface": "south",
+          "texture": "#podzol_overlay"
+        },
+        "up": {
+          "cullface": "up",
+          "texture": "#podzol_top_overlay"
+        },
+        "west": {
+          "cullface": "west",
+          "texture": "#podzol_overlay"
+        }
+      },
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        16,
+        16
+      ]
+    }
+  ],
+  "textures": {
+    "bottom": "minecraft:block/dirt",
+    "overlay": "minecraft:block/grass_block_side_overlay",
+    "particle": "minecraft:block/dirt",
+    "podzol_overlay": "pleasance:block/patchy_podzol_side_overlay",
+    "podzol_top_overlay": "pleasance:block/patchy_podzol_top_overlay",
+    "side": "minecraft:block/dirt",
+    "top": "minecraft:block/grass_block_top"
+  }
+}

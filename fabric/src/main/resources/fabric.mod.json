@@ -11,14 +11,14 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.crispytwig.dappledrevamp.fabric.DappledRevampFabric"
+      "com.crispytwig.pleasance.fabric.PleasanceFabric"
     ],
     "client": [
-      "com.crispytwig.dappledrevamp.fabric.DappledRevampFabricClient"
+      "com.crispytwig.pleasance.fabric.PleasanceFabricClient"
     ]
   },
   "mixins": [
-    "dappledrevamp.mixins.json"
+    "pleasance.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=${fabric_loader_version}",

@@ -1,0 +1,17 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "minecraft:dappled_forest",
+  "features": [
+    "pleasance:moss_patch",
+    "pleasance:hanging_roots",
+    "pleasance:red_mushroom",
+    "pleasance:patch_pumpkin",
+    "pleasance:patch_berry_bush",
+    "pleasance:patch_poplar_bush",
+    "pleasance:patch_sunflower",
+    "pleasance:patch_grass_dappled_forest",
+    "pleasance:flower_dappled_forest",
+    "minecraft:seagrass_river"
+  ],
+  "step": "vegetal_decoration"
+}

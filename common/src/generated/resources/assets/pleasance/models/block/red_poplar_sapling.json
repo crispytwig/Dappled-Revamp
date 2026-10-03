@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "pleasance:block/red_poplar_sapling"
+  }
+}

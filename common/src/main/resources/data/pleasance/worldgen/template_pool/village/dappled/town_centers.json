@@ -1,0 +1,41 @@
+{
+  "elements": [
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "pleasance:village/dappled/town_centers/dappled_meeting_point_1",
+        "processors": "pleasance:mossify_dappled",
+        "projection": "rigid"
+      },
+      "weight": 40
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "pleasance:village/dappled/town_centers/dappled_meeting_point_2",
+        "processors": "pleasance:mossify_dappled",
+        "projection": "rigid"
+      },
+      "weight": 40
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "pleasance:village/dappled/zombie/town_centers/dappled_meeting_point_1",
+        "processors": "pleasance:zombie_dappled",
+        "projection": "rigid"
+      },
+      "weight": 10
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "pleasance:village/dappled/zombie/town_centers/dappled_meeting_point_2",
+        "processors": "pleasance:zombie_dappled",
+        "projection": "rigid"
+      },
+      "weight": 10
+    }
+  ],
+  "fallback": "minecraft:empty"
+}
