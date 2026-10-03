@@ -5,20 +5,28 @@
   "minVersion": "0.8",
   "mixins": [
     "BlockBehaviourMixin",
-    "FoxGroupDataMixin",
+    "BlockMixin",
+    "BlockPropertiesAccessor",
+    "BlockStateBaseMixin",
     "FoxMixin",
     "ItemStackMixin",
     "OverworldBiomeBuilderMixin",
-    "SaplingBlockMixin",
+    "PotionItemMixin",
     "ShelfMushroomDecoratorMixin",
     "SpreadingSnowyBlockMixin",
     "TreeGrowerMixin",
     "VegetationPatchFeatureMixin"
   ],
   "client": [
-    "client.BlockColorsMixin",
+    "client.BlockModelFeatureRendererMixin",
+    "client.CuboidItemModelWrapperMixin",
     "client.FoxRendererMixin",
-    "client.FoxRenderStateMixin"
+    "client.FoxRenderStateMixin",
+    "client.ItemFeatureRendererMixin",
+    "client.MaterialBakerMixin",
+    "client.ModelBlockRendererMixin",
+    "client.ModelManagerMixin",
+    "client.UnbakedCuboidGeometryMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -1,5 +1,6 @@
 {
   "tooltip.dappledrevamp.poplar_sapling.orange": "Orange Poplar",
   "tooltip.dappledrevamp.poplar_sapling.red": "Red Poplar",
-  "tooltip.dappledrevamp.poplar_sapling.yellow": "Yellow Poplar"
+  "tooltip.dappledrevamp.poplar_sapling.yellow": "Yellow Poplar",
+  "item.dappledrevamp.moist": "Moist %s"
 }

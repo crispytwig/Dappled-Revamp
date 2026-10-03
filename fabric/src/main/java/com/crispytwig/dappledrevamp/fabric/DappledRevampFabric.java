@@ -1,7 +1,8 @@
 package com.crispytwig.dappledrevamp.fabric;
 
 import com.crispytwig.dappledrevamp.DappledRevamp;
-import com.crispytwig.dappledrevamp.fox.GreyFoxStorage;
+import com.crispytwig.dappledrevamp.fox.GreyFox;
+import com.crispytwig.dappledrevamp.moist.MoistenRecipe;
 import com.crispytwig.dappledrevamp.poplar.PoplarColor;
 import com.mojang.serialization.Codec;
 import net.fabricmc.api.ModInitializer;
@@ -11,6 +12,8 @@ import net.fabricmc.fabric.api.attachment.v1.AttachmentType;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.resources.Identifier;
@@ -23,7 +26,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.levelgen.GenerationStep;
 
-public class DappledRevampFabric implements ModInitializer, GreyFoxStorage {
+public class DappledRevampFabric implements ModInitializer, GreyFox.Storage {
     private static final ResourceKey<CreativeModeTab> NATURAL_BLOCKS = ResourceKey.create(Registries.CREATIVE_MODE_TAB, Identifier.withDefaultNamespace("natural_blocks"));
     private static final AttachmentType<Boolean> GREY = AttachmentRegistry.create(
         DappledRevamp.id("grey"),
@@ -35,6 +38,7 @@ public class DappledRevampFabric implements ModInitializer, GreyFoxStorage {
     @Override
     public void onInitialize() {
         DappledRevamp.init(this);
+        Registry.register(BuiltInRegistries.RECIPE_SERIALIZER, DappledRevamp.id("moisten"), MoistenRecipe.SERIALIZER);
 
         for (String feature : new String[]{"moss_patch", "red_mushroom","patch_pumpkin", "patch_berry_bush"}) {
             BiomeModifications.addFeature(

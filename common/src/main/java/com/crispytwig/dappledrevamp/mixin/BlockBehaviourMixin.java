@@ -1,5 +1,6 @@
 package com.crispytwig.dappledrevamp.mixin;
 
+import com.crispytwig.dappledrevamp.moist.Moist;
 import com.crispytwig.dappledrevamp.poplar.PoplarColor;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponents;
@@ -23,6 +24,13 @@ public abstract class BlockBehaviourMixin {
         PoplarColor color = state.getValue(PoplarColor.PROPERTY);
         if (color != PoplarColor.ORANGE) {
             cir.getReturnValue().set(DataComponents.BLOCK_STATE, BlockItemStateProperties.EMPTY.with(PoplarColor.PROPERTY, color));
+        }
+    }
+
+    @Inject(method = "getCloneItemStack", at = @At("RETURN"))
+    private void dappledRevamp$pickMoist(LevelReader level, BlockPos pos, BlockState state, boolean includeData, CallbackInfoReturnable<ItemStack> cir) {
+        if (Moist.isMoist(state) && !cir.getReturnValue().isEmpty()) {
+            Moist.makeMoist(cir.getReturnValue());
         }
     }
 }

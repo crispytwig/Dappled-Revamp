@@ -1,12 +1,12 @@
 package com.crispytwig.dappledrevamp.mixin.client;
 
-import com.crispytwig.dappledrevamp.fox.GreyFoxRenderState;
+import com.crispytwig.dappledrevamp.fox.GreyFox;
 import net.minecraft.client.renderer.entity.state.FoxRenderState;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 
 @Mixin(FoxRenderState.class)
-public abstract class FoxRenderStateMixin implements GreyFoxRenderState {
+public abstract class FoxRenderStateMixin implements GreyFox {
     @Unique
     private boolean dappledRevamp$grey;
 

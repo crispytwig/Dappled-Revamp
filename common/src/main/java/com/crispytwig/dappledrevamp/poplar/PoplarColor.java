@@ -2,6 +2,7 @@ package com.crispytwig.dappledrevamp.poplar;
 
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.data.worldgen.features.TreeFeatures;
+import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.item.ItemStack;
@@ -10,6 +11,7 @@ import net.minecraft.world.item.component.BlockItemStateProperties;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.levelgen.feature.Feature;
+import org.jspecify.annotations.Nullable;
 
 public enum PoplarColor implements StringRepresentable {
     ORANGE("orange", TreeFeatures.ORANGE_POPLAR),
@@ -52,7 +54,7 @@ public enum PoplarColor implements StringRepresentable {
         return color == null ? ORANGE : color;
     }
 
-    public static boolean isPoplarSapling(Block block) {
-        return "block.minecraft.poplar_sapling".equals(block.getDescriptionId());
+    public static boolean isPoplarSapling(@Nullable ResourceKey<Block> id) {
+        return id != null && id.identifier().equals(Identifier.withDefaultNamespace("poplar_sapling"));
     }
 }

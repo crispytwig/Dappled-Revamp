@@ -1,5 +1,6 @@
 package com.crispytwig.dappledrevamp.mixin;
 
+import com.crispytwig.dappledrevamp.moist.Moist;
 import com.crispytwig.dappledrevamp.poplar.PoplarColor;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -14,6 +15,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.function.Consumer;
 
@@ -27,6 +29,13 @@ public abstract class ItemStackMixin {
         ItemStack stack = (ItemStack) (Object) this;
         if (stack.is(Items.POPLAR_SAPLING)) {
             builder.accept(Component.translatable(PoplarColor.of(stack).tooltipKey()).withStyle(ChatFormatting.GRAY));
+        }
+    }
+
+    @Inject(method = "getItemName", at = @At("RETURN"), cancellable = true)
+    private void dappledRevamp$moistName(CallbackInfoReturnable<Component> cir) {
+        if (Moist.isMoist((ItemStack) (Object) this)) {
+            cir.setReturnValue(Component.translatable("item.dappledrevamp.moist", cir.getReturnValue()));
         }
     }
 }

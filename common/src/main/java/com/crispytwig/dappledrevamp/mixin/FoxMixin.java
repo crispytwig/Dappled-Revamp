@@ -2,7 +2,6 @@ package com.crispytwig.dappledrevamp.mixin;
 
 import com.crispytwig.dappledrevamp.DappledRevamp;
 import com.crispytwig.dappledrevamp.fox.GreyFox;
-import com.crispytwig.dappledrevamp.fox.GreyFoxGroup;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.entity.AgeableMob;
@@ -35,21 +34,14 @@ public abstract class FoxMixin implements GreyFox {
     }
 
     @Inject(method = "finalizeSpawn", at = @At("RETURN"))
-    private void dappledRevamp$rollGrey(
+    private void dappledRevamp$spawnGrey(
         ServerLevelAccessor level, DifficultyInstance difficulty, EntitySpawnReason spawnReason, @Nullable SpawnGroupData groupData,
         CallbackInfoReturnable<SpawnGroupData> cir
     ) {
-        if (!(cir.getReturnValue() instanceof GreyFoxGroup group)) {
-            return;
+        Fox self = this.dappledRevamp$self();
+        if (self.getVariant() == Fox.Variant.RED && level.getBiome(self.blockPosition()).is(GreyFox.SPAWNS_GREY_FOXES)) {
+            this.dappledRevamp$setGrey(true);
         }
-        Boolean grey = group.dappledRevamp$getGrey();
-        if (grey == null) {
-            Fox self = this.dappledRevamp$self();
-            grey = self.getVariant() == Fox.Variant.RED
-                && level.getBiome(self.blockPosition()).is(GreyFox.SPAWNS_GREY_FOXES);
-            group.dappledRevamp$setGrey(grey);
-        }
-        this.dappledRevamp$setGrey(grey);
     }
 
     @Inject(

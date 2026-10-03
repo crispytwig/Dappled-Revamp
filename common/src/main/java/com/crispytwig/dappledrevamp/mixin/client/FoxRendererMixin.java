@@ -2,7 +2,6 @@ package com.crispytwig.dappledrevamp.mixin.client;
 
 import com.crispytwig.dappledrevamp.DappledRevamp;
 import com.crispytwig.dappledrevamp.fox.GreyFox;
-import com.crispytwig.dappledrevamp.fox.GreyFoxRenderState;
 import net.minecraft.client.renderer.entity.FoxRenderer;
 import net.minecraft.client.renderer.entity.state.FoxRenderState;
 import net.minecraft.resources.Identifier;
@@ -26,7 +25,7 @@ public abstract class FoxRendererMixin {
         at = @At("TAIL")
     )
     private void dappledRevamp$extractGrey(Fox fox, FoxRenderState state, float partialTicks, CallbackInfo ci) {
-        ((GreyFoxRenderState) state).dappledRevamp$setGrey(((GreyFox) fox).dappledRevamp$isGrey());
+        ((GreyFox) state).dappledRevamp$setGrey(((GreyFox) fox).dappledRevamp$isGrey());
     }
 
     @Inject(
@@ -35,7 +34,7 @@ public abstract class FoxRendererMixin {
         cancellable = true
     )
     private void dappledRevamp$greyTexture(FoxRenderState state, CallbackInfoReturnable<Identifier> cir) {
-        if (state.variant != Fox.Variant.RED || !((GreyFoxRenderState) state).dappledRevamp$isGrey()) {
+        if (state.variant != Fox.Variant.RED || !((GreyFox) state).dappledRevamp$isGrey()) {
             return;
         }
         if (state.isSleeping) {
