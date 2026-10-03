@@ -3,6 +3,9 @@
   - Grey Foxes are skins of basic Foxes, but spawn in Dappled Forests.
 
 
+- **Zombies** and **Skeletons** that spawn in Dappled Forests have a 25% chance to wear a Carved Pumpkin _(or rarely a Jack o'Lantern)_, like they do on Halloween.
+
+
 - Added **Worms**.
     - Worms spawn in Dappled Forests in groups of 2-4 during rainy weather.
       - When it stops raining, Worms dry up with a 50% chance to leave behind a Worm item.

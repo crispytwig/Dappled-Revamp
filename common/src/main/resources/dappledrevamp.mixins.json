@@ -18,6 +18,7 @@
     "ItemStackMixin",
     "OverworldBiomeBuilderMixin",
     "PotionItemMixin",
+    "PumpkinHeadMobMixin",
     "ShelfMushroomDecoratorMixin",
     "SpreadingSnowyBlockMixin",
     "TreeGrowerMixin",
