@@ -22,8 +22,11 @@ import java.io.Reader;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.Enumeration;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
+import java.util.function.BiConsumer;
 
 public final class Moist {
     private static final Logger LOGGER = LogUtils.getLogger();
@@ -55,6 +58,25 @@ public final class Moist {
         return stack.getItem() instanceof BlockItem blockItem
             && blockItem.getBlock().defaultBlockState().hasProperty(PROPERTY)
             && !isMoist(stack);
+    }
+
+    public static void insertMoistBefore(Iterable<ItemStack> entries, BiConsumer<ItemStack, ItemStack> insertBefore) {
+        for (ItemStack stack : entries) {
+            if (canMoisten(stack)) {
+                insertBefore.accept(stack, makeMoist(stack.copy()));
+            }
+        }
+    }
+
+    public static ItemStack makeDry(ItemStack stack) {
+        Map<String, String> properties = new HashMap<>(stack.getOrDefault(DataComponents.BLOCK_STATE, BlockItemStateProperties.EMPTY).properties());
+        properties.remove(PROPERTY.getName());
+        if (properties.isEmpty()) {
+            stack.remove(DataComponents.BLOCK_STATE);
+        } else {
+            stack.set(DataComponents.BLOCK_STATE, new BlockItemStateProperties(properties));
+        }
+        return stack;
     }
 
     public static ItemStack makeMoist(ItemStack stack) {

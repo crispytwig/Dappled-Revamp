@@ -2,6 +2,8 @@ package com.crispytwig.dappledrevamp.fabric;
 
 import com.crispytwig.dappledrevamp.DappledRevamp;
 import com.crispytwig.dappledrevamp.fox.GreyFox;
+import com.crispytwig.dappledrevamp.moist.DryRecipe;
+import com.crispytwig.dappledrevamp.moist.Moist;
 import com.crispytwig.dappledrevamp.moist.MoistenRecipe;
 import com.crispytwig.dappledrevamp.poplar.PoplarColor;
 import com.mojang.serialization.Codec;
@@ -26,6 +28,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.levelgen.GenerationStep;
 
+import java.util.List;
+
 public class DappledRevampFabric implements ModInitializer, GreyFox.Storage {
     private static final ResourceKey<CreativeModeTab> NATURAL_BLOCKS = ResourceKey.create(Registries.CREATIVE_MODE_TAB, Identifier.withDefaultNamespace("natural_blocks"));
     private static final AttachmentType<Boolean> GREY = AttachmentRegistry.create(
@@ -39,6 +43,7 @@ public class DappledRevampFabric implements ModInitializer, GreyFox.Storage {
     public void onInitialize() {
         DappledRevamp.init(this);
         Registry.register(BuiltInRegistries.RECIPE_SERIALIZER, DappledRevamp.id("moisten"), MoistenRecipe.SERIALIZER);
+        Registry.register(BuiltInRegistries.RECIPE_SERIALIZER, DappledRevamp.id("dry"), DryRecipe.SERIALIZER);
 
         for (String feature : new String[]{"moss_patch", "red_mushroom","patch_pumpkin", "patch_berry_bush"}) {
             BiomeModifications.addFeature(
@@ -55,6 +60,9 @@ public class DappledRevampFabric implements ModInitializer, GreyFox.Storage {
             output.insertBefore(poplar, PoplarColor.RED.sapling());
             output.insertAfter(poplar, PoplarColor.YELLOW.sapling());
         });
+        CreativeModeTabEvents.MODIFY_OUTPUT_ALL.register((tab, output) ->
+            Moist.insertMoistBefore(List.copyOf(output.getDisplayStacks()), output::insertBefore)
+        );
     }
 
     @Override

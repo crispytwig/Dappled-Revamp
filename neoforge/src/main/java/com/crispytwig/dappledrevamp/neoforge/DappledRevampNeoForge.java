@@ -2,6 +2,8 @@ package com.crispytwig.dappledrevamp.neoforge;
 
 import com.crispytwig.dappledrevamp.DappledRevamp;
 import com.crispytwig.dappledrevamp.fox.GreyFox;
+import com.crispytwig.dappledrevamp.moist.DryRecipe;
+import com.crispytwig.dappledrevamp.moist.Moist;
 import com.crispytwig.dappledrevamp.moist.MoistenRecipe;
 import com.crispytwig.dappledrevamp.poplar.PoplarColor;
 import com.mojang.serialization.Codec;
@@ -21,6 +23,8 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
+import java.util.List;
+
 @Mod(DappledRevamp.MOD_ID)
 public class DappledRevampNeoForge implements GreyFox.Storage {
     private static final ResourceKey<CreativeModeTab> NATURAL_BLOCKS = ResourceKey.create(Registries.CREATIVE_MODE_TAB, Identifier.withDefaultNamespace("natural_blocks"));
@@ -36,6 +40,7 @@ public class DappledRevampNeoForge implements GreyFox.Storage {
 
     static {
         RECIPE_SERIALIZERS.register("moisten", () -> MoistenRecipe.SERIALIZER);
+        RECIPE_SERIALIZERS.register("dry", () -> DryRecipe.SERIALIZER);
     }
 
     public DappledRevampNeoForge(IEventBus modEventBus) {
@@ -46,6 +51,14 @@ public class DappledRevampNeoForge implements GreyFox.Storage {
     }
 
     private static void addCreativeTabEntries(BuildCreativeModeTabContentsEvent event) {
+        Moist.insertMoistBefore(List.copyOf(event.getParentEntries()), (dry, moist) -> {
+            boolean parent = !event.getParentEntries().contains(moist);
+            boolean search = !event.getSearchEntries().contains(moist) && event.getSearchEntries().contains(dry);
+            if (parent || search) {
+                event.insertBefore(dry, moist, parent && search ? CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS
+                    : parent ? CreativeModeTab.TabVisibility.PARENT_TAB_ONLY : CreativeModeTab.TabVisibility.SEARCH_TAB_ONLY);
+            }
+        });
         if (!event.getTabKey().equals(NATURAL_BLOCKS)) {
             return;
         }
