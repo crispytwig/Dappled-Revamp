@@ -1,7 +1,7 @@
 package com.crispytwig.dappledrevamp.mixin.client;
 
-import com.crispytwig.dappledrevamp.moist.Moist;
-import com.crispytwig.dappledrevamp.tint.WithoutOverlaysModel;
+import com.crispytwig.dappledrevamp.client.renderer.block.WithoutOverlaysModel;
+import com.crispytwig.dappledrevamp.world.level.block.Moist;
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import net.minecraft.client.renderer.block.dispatch.BlockStateModel;
 import net.minecraft.client.resources.model.ModelManager;

@@ -1,0 +1,21 @@
+{
+  "item.worm.bait": {
+    "sounds": [
+      "dappledrevamp:item/worm/rod1",
+      "dappledrevamp:item/worm/rod2",
+      "dappledrevamp:item/worm/rod3",
+      "dappledrevamp:item/worm/rod4"
+    ],
+    "subtitle": "subtitles.dappledrevamp.item.worm.bait"
+  },
+  "item.worm.hook": {
+    "sounds": [
+      "dappledrevamp:item/worm/hook1",
+      "dappledrevamp:item/worm/hook2",
+      "dappledrevamp:item/worm/hook3",
+      "dappledrevamp:item/worm/hook4",
+      "dappledrevamp:item/worm/hook5"
+    ],
+    "subtitle": "subtitles.dappledrevamp.item.worm.hook"
+  }
+}

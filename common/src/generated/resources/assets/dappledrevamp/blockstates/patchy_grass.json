@@ -1,0 +1,24 @@
+{
+  "variants": {
+    "snowy=false": [
+      {
+        "model": "dappledrevamp:block/patchy_grass"
+      },
+      {
+        "model": "dappledrevamp:block/patchy_grass",
+        "y": 90
+      },
+      {
+        "model": "dappledrevamp:block/patchy_grass",
+        "y": 180
+      },
+      {
+        "model": "dappledrevamp:block/patchy_grass",
+        "y": 270
+      }
+    ],
+    "snowy=true": {
+      "model": "minecraft:block/grass_block_snow"
+    }
+  }
+}

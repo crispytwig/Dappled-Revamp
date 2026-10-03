@@ -1,7 +1,8 @@
 package com.crispytwig.dappledrevamp.mixin;
 
-import com.crispytwig.dappledrevamp.worm.Bait;
-import com.crispytwig.dappledrevamp.worm.WormContent;
+import com.crispytwig.dappledrevamp.registry.ModItems;
+import com.crispytwig.dappledrevamp.registry.ModSoundEvents;
+import com.crispytwig.dappledrevamp.world.item.Bait;
 import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
@@ -45,7 +46,7 @@ public abstract class FishingRodItemMixin extends Item {
         index = 3
     )
     private int dappledRevamp$baitedLure(int lureSpeed, @Local(argsOnly = true) Player player, @Local(argsOnly = true) InteractionHand hand) {
-        return player.getItemInHand(hand).is(WormContent.BAITED_ROD.get()) ? lureSpeed + 100 : lureSpeed;
+        return player.getItemInHand(hand).is(ModItems.BAITED_ROD.get()) ? lureSpeed + 100 : lureSpeed;
     }
 
     @Override
@@ -59,7 +60,7 @@ public abstract class FishingRodItemMixin extends Item {
             return itemStack;
         }
         Bait.consumeBait(player, Bait.otherHand(player.getUsedItemHand()));
-        level.playSound(null, player.getX(), player.getY(), player.getZ(), WormContent.HOOK_SOUND.get(), SoundSource.PLAYERS, 1.0F, 1.0F);
+        level.playSound(null, player.getX(), player.getY(), player.getZ(), ModSoundEvents.WORM_HOOK.get(), SoundSource.PLAYERS, 1.0F, 1.0F);
         return Bait.baitRod(player, itemStack);
     }
 }

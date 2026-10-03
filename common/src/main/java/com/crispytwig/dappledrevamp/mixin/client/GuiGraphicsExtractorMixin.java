@@ -1,6 +1,6 @@
 package com.crispytwig.dappledrevamp.mixin.client;
 
-import com.crispytwig.dappledrevamp.worm.WormBucketItem;
+import com.crispytwig.dappledrevamp.world.item.WormBucketItem;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.renderer.RenderPipelines;
 import net.minecraft.resources.Identifier;

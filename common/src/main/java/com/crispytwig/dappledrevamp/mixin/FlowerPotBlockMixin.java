@@ -1,6 +1,6 @@
 package com.crispytwig.dappledrevamp.mixin;
 
-import com.crispytwig.dappledrevamp.poplar.PoplarColor;
+import com.crispytwig.dappledrevamp.world.level.block.PoplarColor;
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.world.item.ItemStack;

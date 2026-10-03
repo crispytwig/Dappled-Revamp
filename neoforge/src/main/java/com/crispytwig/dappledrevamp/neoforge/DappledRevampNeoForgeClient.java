@@ -1,28 +1,35 @@
 package com.crispytwig.dappledrevamp.neoforge;
 
-import com.crispytwig.dappledrevamp.DappledRevamp;
-import com.crispytwig.dappledrevamp.worm.WormContent;
-import com.crispytwig.dappledrevamp.worm.client.WormClient;
-import com.crispytwig.dappledrevamp.worm.client.WormModel;
-import com.crispytwig.dappledrevamp.worm.client.WormRenderer;
-import net.neoforged.api.distmarker.Dist;
+import com.crispytwig.dappledrevamp.DappledRevampClient;
+import com.crispytwig.dappledrevamp.client.model.animal.worm.WormModel;
+import com.crispytwig.dappledrevamp.client.renderer.entity.WormRenderer;
+import com.crispytwig.dappledrevamp.registry.ModBlocks;
+import com.crispytwig.dappledrevamp.registry.ModEntityTypes;
+import net.minecraft.client.color.block.BlockTintSources;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.ModContainer;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 
-@Mod(value = DappledRevamp.MOD_ID, dist = Dist.CLIENT)
+import java.util.List;
+
 public class DappledRevampNeoForgeClient {
-    public DappledRevampNeoForgeClient(IEventBus modEventBus) {
-        WormClient.init();
-        modEventBus.addListener(DappledRevampNeoForgeClient::registerLayers);
+    public static void init(IEventBus modEventBus, ModContainer modContainer) {
+        DappledRevampClient.init();
         modEventBus.addListener(DappledRevampNeoForgeClient::registerRenderers);
-    }
-
-    private static void registerLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
-        event.registerLayerDefinition(WormRenderer.LAYER, WormModel::createBodyLayer);
+        modEventBus.addListener(DappledRevampNeoForgeClient::registerLayerDefinitions);
+        modEventBus.addListener(DappledRevampNeoForgeClient::registerBlockColors);
     }
 
     private static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
-        event.registerEntityRenderer(WormContent.WORM.get(), WormRenderer::new);
+        event.registerEntityRenderer(ModEntityTypes.WORM.get(), WormRenderer::new);
+    }
+
+    private static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
+        event.registerLayerDefinition(WormRenderer.LAYER, WormModel::createBodyLayer);
+    }
+
+    private static void registerBlockColors(RegisterColorHandlersEvent.BlockTintSources event) {
+        event.register(List.of(BlockTintSources.grassBlock()), ModBlocks.PATCHY_GRASS.get());
     }
 }

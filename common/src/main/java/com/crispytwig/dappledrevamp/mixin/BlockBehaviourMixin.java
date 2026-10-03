@@ -1,7 +1,7 @@
 package com.crispytwig.dappledrevamp.mixin;
 
-import com.crispytwig.dappledrevamp.moist.Moist;
-import com.crispytwig.dappledrevamp.poplar.PoplarColor;
+import com.crispytwig.dappledrevamp.world.level.block.Moist;
+import com.crispytwig.dappledrevamp.world.level.block.PoplarColor;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.ItemStack;

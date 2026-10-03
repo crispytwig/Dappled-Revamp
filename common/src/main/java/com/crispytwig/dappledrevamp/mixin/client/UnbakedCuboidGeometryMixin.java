@@ -1,6 +1,6 @@
 package com.crispytwig.dappledrevamp.mixin.client;
 
-import com.crispytwig.dappledrevamp.tint.TintOverlays;
+import com.crispytwig.dappledrevamp.client.renderer.block.TintOverlays;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.llamalad7.mixinextras.sugar.Share;

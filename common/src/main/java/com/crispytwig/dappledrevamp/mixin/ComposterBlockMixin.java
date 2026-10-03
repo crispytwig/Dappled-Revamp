@@ -1,6 +1,6 @@
 package com.crispytwig.dappledrevamp.mixin;
 
-import com.crispytwig.dappledrevamp.worm.WormContent;
+import com.crispytwig.dappledrevamp.registry.ModBlocks;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import net.minecraft.core.BlockPos;
@@ -28,7 +28,7 @@ public abstract class ComposterBlockMixin {
         ResolvableInt layers, LootContext context, int defaultValue, Operation<Integer> original,
         @Nullable Entity sourceEntity, BlockState state, ServerLevel level, BlockPos pos, Compostable compostable
     ) {
-        if (!state.is(WormContent.WORM_BIN.get())) {
+        if (!state.is(ModBlocks.WORM_BIN.get())) {
             return original.call(layers, context, defaultValue);
         }
         if (state.getValue(ComposterBlock.LEVEL) == 0) {

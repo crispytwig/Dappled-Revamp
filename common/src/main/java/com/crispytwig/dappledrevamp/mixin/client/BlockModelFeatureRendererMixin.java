@@ -1,6 +1,6 @@
 package com.crispytwig.dappledrevamp.mixin.client;
 
-import com.crispytwig.dappledrevamp.tint.TintOverlays;
+import com.crispytwig.dappledrevamp.client.renderer.block.TintOverlays;
 import com.llamalad7.mixinextras.sugar.Local;
 import com.mojang.blaze3d.vertex.QuadInstance;
 import net.minecraft.client.renderer.feature.BlockModelFeatureRenderer;

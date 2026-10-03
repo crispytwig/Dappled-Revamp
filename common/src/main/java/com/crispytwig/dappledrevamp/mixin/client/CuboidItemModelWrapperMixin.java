@@ -1,7 +1,7 @@
 package com.crispytwig.dappledrevamp.mixin.client;
 
-import com.crispytwig.dappledrevamp.moist.Moist;
-import com.crispytwig.dappledrevamp.tint.TintOverlays;
+import com.crispytwig.dappledrevamp.client.renderer.block.TintOverlays;
+import com.crispytwig.dappledrevamp.world.level.block.Moist;
 import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.item.CuboidItemModelWrapper;

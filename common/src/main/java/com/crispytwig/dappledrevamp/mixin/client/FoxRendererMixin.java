@@ -1,7 +1,7 @@
 package com.crispytwig.dappledrevamp.mixin.client;
 
 import com.crispytwig.dappledrevamp.DappledRevamp;
-import com.crispytwig.dappledrevamp.fox.GreyFox;
+import com.crispytwig.dappledrevamp.world.entity.animal.fox.GreyFox;
 import net.minecraft.client.renderer.entity.FoxRenderer;
 import net.minecraft.client.renderer.entity.state.FoxRenderState;
 import net.minecraft.resources.Identifier;
@@ -15,10 +15,10 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(FoxRenderer.class)
 public abstract class FoxRendererMixin {
-    @Unique private static final Identifier GREY_FOX = DappledRevamp.id("textures/entity/fox/grey_fox.png");
-    @Unique private static final Identifier GREY_FOX_SLEEP = DappledRevamp.id("textures/entity/fox/grey_fox_sleep.png");
-    @Unique private static final Identifier GREY_FOX_BABY = DappledRevamp.id("textures/entity/fox/grey_fox_baby.png");
-    @Unique private static final Identifier GREY_FOX_SLEEP_BABY = DappledRevamp.id("textures/entity/fox/grey_fox_sleep_baby.png");
+    @Unique private static final Identifier GREY_FOX = DappledRevamp.location("textures/entity/fox/grey_fox.png");
+    @Unique private static final Identifier GREY_FOX_SLEEP = DappledRevamp.location("textures/entity/fox/grey_fox_sleep.png");
+    @Unique private static final Identifier GREY_FOX_BABY = DappledRevamp.location("textures/entity/fox/grey_fox_baby.png");
+    @Unique private static final Identifier GREY_FOX_SLEEP_BABY = DappledRevamp.location("textures/entity/fox/grey_fox_sleep_baby.png");
 
     @Inject(
         method = "extractRenderState(Lnet/minecraft/world/entity/animal/fox/Fox;Lnet/minecraft/client/renderer/entity/state/FoxRenderState;F)V",

@@ -1,7 +1,8 @@
 package com.crispytwig.dappledrevamp.mixin;
 
 import com.crispytwig.dappledrevamp.DappledRevamp;
-import com.crispytwig.dappledrevamp.fox.GreyFox;
+import com.crispytwig.dappledrevamp.tags.ModBiomeTags;
+import com.crispytwig.dappledrevamp.world.entity.animal.fox.GreyFox;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.entity.AgeableMob;
@@ -39,7 +40,7 @@ public abstract class FoxMixin implements GreyFox {
         CallbackInfoReturnable<SpawnGroupData> cir
     ) {
         Fox self = this.dappledRevamp$self();
-        if (self.getVariant() == Fox.Variant.RED && level.getBiome(self.blockPosition()).is(GreyFox.SPAWNS_GREY_FOXES)) {
+        if (self.getVariant() == Fox.Variant.RED && level.getBiome(self.blockPosition()).is(ModBiomeTags.SPAWNS_GREY_FOXES)) {
             this.dappledRevamp$setGrey(true);
         }
     }

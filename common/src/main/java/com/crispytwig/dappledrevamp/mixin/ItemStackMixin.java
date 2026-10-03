@@ -1,7 +1,7 @@
 package com.crispytwig.dappledrevamp.mixin;
 
-import com.crispytwig.dappledrevamp.moist.Moist;
-import com.crispytwig.dappledrevamp.poplar.PoplarColor;
+import com.crispytwig.dappledrevamp.world.level.block.Moist;
+import com.crispytwig.dappledrevamp.world.level.block.PoplarColor;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Player;

@@ -1,28 +1,27 @@
 package com.crispytwig.dappledrevamp.neoforge;
 
 import com.crispytwig.dappledrevamp.DappledRevamp;
-import com.crispytwig.dappledrevamp.Registrar;
-import com.crispytwig.dappledrevamp.fox.GreyFox;
-import com.crispytwig.dappledrevamp.moist.DryRecipe;
-import com.crispytwig.dappledrevamp.moist.Moist;
-import com.crispytwig.dappledrevamp.moist.MoistenRecipe;
-import com.crispytwig.dappledrevamp.poplar.PoplarColor;
-import com.crispytwig.dappledrevamp.worm.Worm;
-import com.crispytwig.dappledrevamp.worm.WormContent;
+import com.crispytwig.dappledrevamp.datagen.ModDataGenerators;
+import com.crispytwig.dappledrevamp.neoforge.platform.NeoForgeRegistrationProvider;
+import com.crispytwig.dappledrevamp.registry.ModCreativeTab;
+import com.crispytwig.dappledrevamp.world.entity.animal.fox.GreyFox;
+import com.crispytwig.dappledrevamp.world.level.block.Moist;
+import com.crispytwig.dappledrevamp.world.level.block.PoplarColor;
 import com.mojang.serialization.Codec;
-import net.minecraft.core.Registry;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.network.codec.ByteBufCodecs;
-import net.minecraft.resources.Identifier;
-import net.minecraft.resources.ResourceKey;
-import net.minecraft.world.entity.SpawnPlacementTypes;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.SpawnPlacementType;
+import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.animal.fox.Fox;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.levelgen.Heightmap;
+import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.loading.FMLEnvironment;
 import net.neoforged.neoforge.attachment.AttachmentType;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
@@ -31,14 +30,10 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.function.Supplier;
 
 @Mod(DappledRevamp.MOD_ID)
-public class DappledRevampNeoForge implements GreyFox.Storage, Registrar {
-    private static final ResourceKey<CreativeModeTab> NATURAL_BLOCKS = ResourceKey.create(Registries.CREATIVE_MODE_TAB, Identifier.withDefaultNamespace("natural_blocks"));
+public class DappledRevampNeoForge implements GreyFox.Storage {
     private static final DeferredRegister<AttachmentType<?>> ATTACHMENT_TYPES = DeferredRegister.create(NeoForgeRegistries.Keys.ATTACHMENT_TYPES, DappledRevamp.MOD_ID);
     private static final DeferredHolder<AttachmentType<?>, AttachmentType<Boolean>> GREY = ATTACHMENT_TYPES.register(
         "grey",
@@ -47,47 +42,34 @@ public class DappledRevampNeoForge implements GreyFox.Storage, Registrar {
             .sync(ByteBufCodecs.BOOL)
             .build()
     );
-    private static final DeferredRegister<RecipeSerializer<?>> RECIPE_SERIALIZERS = DeferredRegister.create(Registries.RECIPE_SERIALIZER, DappledRevamp.MOD_ID);
 
-    static {
-        RECIPE_SERIALIZERS.register("moisten", () -> MoistenRecipe.SERIALIZER);
-        RECIPE_SERIALIZERS.register("dry", () -> DryRecipe.SERIALIZER);
-    }
-
-    private final IEventBus modEventBus;
-    private final Map<ResourceKey<?>, DeferredRegister<?>> registers = new HashMap<>();
-
-    public DappledRevampNeoForge(IEventBus modEventBus) {
-        this.modEventBus = modEventBus;
-        ATTACHMENT_TYPES.register(modEventBus);
-        RECIPE_SERIALIZERS.register(modEventBus);
-        WormContent.register(this);
-        modEventBus.addListener(DappledRevampNeoForge::addCreativeTabEntries);
-        modEventBus.addListener(DappledRevampNeoForge::createAttributes);
-        modEventBus.addListener(DappledRevampNeoForge::registerSpawnPlacements);
+    public DappledRevampNeoForge(IEventBus modEventBus, ModContainer modContainer) {
+        NeoForgeRegistrationProvider.EVENT_BUS = modEventBus;
         DappledRevamp.init(this);
+        DappledRevamp.bootstrap();
+        ATTACHMENT_TYPES.register(modEventBus);
+
+        modEventBus.addListener(this::createAttributes);
+        modEventBus.addListener(this::registerSpawnPlacements);
+        modEventBus.addListener(DappledRevampNeoForge::addCreativeTabEntries);
+        modEventBus.addListener(ModDataGenerators::gatherData);
+
+        if (FMLEnvironment.getDist() == Dist.CLIENT) {
+            DappledRevampNeoForgeClient.init(modEventBus, modContainer);
+        }
     }
 
-    @Override
-    @SuppressWarnings("unchecked")
-    public <T> Supplier<T> register(Registry<? super T> registry, String name, Supplier<T> factory) {
-        DeferredRegister<Object> register = (DeferredRegister<Object>) this.registers.computeIfAbsent(registry.key(), key -> {
-            DeferredRegister<?> created = DeferredRegister.create(registry, DappledRevamp.MOD_ID);
-            created.register(this.modEventBus);
-            return created;
+    private void createAttributes(EntityAttributeCreationEvent event) {
+        DappledRevamp.createAttributes((type, builder) -> event.put(type, builder.build()));
+    }
+
+    private void registerSpawnPlacements(RegisterSpawnPlacementsEvent event) {
+        DappledRevamp.registerSpawnPlacements(new DappledRevamp.SpawnPlacementRegistrar() {
+            @Override
+            public <T extends Mob> void register(EntityType<T> type, SpawnPlacementType placementType, Heightmap.Types heightmap, SpawnPlacements.SpawnPredicate<T> predicate) {
+                event.register(type, placementType, heightmap, predicate, RegisterSpawnPlacementsEvent.Operation.REPLACE);
+            }
         });
-        return register.register(name, factory);
-    }
-
-    private static void createAttributes(EntityAttributeCreationEvent event) {
-        event.put(WormContent.WORM.get(), Worm.createAttributes().build());
-    }
-
-    private static void registerSpawnPlacements(RegisterSpawnPlacementsEvent event) {
-        event.register(
-            WormContent.WORM.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Worm::checkWormSpawnRules,
-            RegisterSpawnPlacementsEvent.Operation.REPLACE
-        );
     }
 
     private static void addCreativeTabEntries(BuildCreativeModeTabContentsEvent event) {
@@ -99,12 +81,12 @@ public class DappledRevampNeoForge implements GreyFox.Storage, Registrar {
                     : parent ? CreativeModeTab.TabVisibility.PARENT_TAB_ONLY : CreativeModeTab.TabVisibility.SEARCH_TAB_ONLY);
             }
         });
-        for (WormContent.TabEntry entry : WormContent.TAB_ENTRIES) {
+        for (ModCreativeTab.Entry entry : ModCreativeTab.ENTRIES) {
             if (event.getTabKey().equals(entry.tab())) {
                 event.insertAfter(new ItemStack(entry.after().get()), new ItemStack(entry.item().get()), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             }
         }
-        if (!event.getTabKey().equals(NATURAL_BLOCKS)) {
+        if (!event.getTabKey().equals(ModCreativeTab.NATURAL_BLOCKS)) {
             return;
         }
         ItemStack poplar = PoplarColor.ORANGE.sapling();

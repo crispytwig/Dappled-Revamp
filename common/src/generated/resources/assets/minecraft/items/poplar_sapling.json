@@ -1,0 +1,27 @@
+{
+  "model": {
+    "type": "minecraft:select",
+    "block_state_property": "color",
+    "cases": [
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "dappledrevamp:item/red_poplar_sapling"
+        },
+        "when": "red"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "dappledrevamp:item/yellow_poplar_sapling"
+        },
+        "when": "yellow"
+      }
+    ],
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "minecraft:item/poplar_sapling"
+    },
+    "property": "minecraft:block_state"
+  }
+}

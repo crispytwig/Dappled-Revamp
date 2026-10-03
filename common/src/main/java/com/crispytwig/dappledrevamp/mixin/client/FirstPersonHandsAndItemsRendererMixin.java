@@ -1,6 +1,6 @@
 package com.crispytwig.dappledrevamp.mixin.client;
 
-import com.crispytwig.dappledrevamp.worm.client.BaitingRenderState;
+import com.crispytwig.dappledrevamp.client.renderer.entity.state.BaitingRenderState;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import net.minecraft.client.renderer.FirstPersonHandsAndItemsRenderer;

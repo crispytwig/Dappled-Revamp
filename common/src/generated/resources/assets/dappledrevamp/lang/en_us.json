@@ -1,0 +1,16 @@
+{
+  "block.dappledrevamp.patchy_grass": "Patchy Grass",
+  "block.dappledrevamp.regolith": "Regolith",
+  "block.dappledrevamp.worm_bin": "Worm Bin",
+  "entity.dappledrevamp.worm": "Worm",
+  "item.dappledrevamp.baited_rod": "Baited Rod",
+  "item.dappledrevamp.moist": "Moist %s",
+  "item.dappledrevamp.worm": "Worm",
+  "item.dappledrevamp.worm_bucket": "Worm Bucket",
+  "item.dappledrevamp.worm_spawn_egg": "Worm Spawn Egg",
+  "subtitles.dappledrevamp.item.worm.bait": "Worm baited",
+  "subtitles.dappledrevamp.item.worm.hook": "Worm wriggles",
+  "tooltip.dappledrevamp.poplar_sapling.orange": "Orange Poplar",
+  "tooltip.dappledrevamp.poplar_sapling.red": "Red Poplar",
+  "tooltip.dappledrevamp.poplar_sapling.yellow": "Yellow Poplar"
+}

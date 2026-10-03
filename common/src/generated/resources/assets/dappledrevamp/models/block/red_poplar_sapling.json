@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "dappledrevamp:block/red_poplar_sapling"
+  }
+}

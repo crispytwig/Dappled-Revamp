@@ -1,6 +1,6 @@
 package com.crispytwig.dappledrevamp.mixin;
 
-import com.crispytwig.dappledrevamp.poplar.PoplarColor;
+import com.crispytwig.dappledrevamp.world.level.block.PoplarColor;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;

@@ -1,7 +1,7 @@
 package com.crispytwig.dappledrevamp.mixin.client;
 
-import com.crispytwig.dappledrevamp.worm.Bait;
-import com.crispytwig.dappledrevamp.worm.client.BaitingRenderState;
+import com.crispytwig.dappledrevamp.client.renderer.entity.state.BaitingRenderState;
+import com.crispytwig.dappledrevamp.world.item.Bait;
 import net.minecraft.client.renderer.entity.HumanoidMobRenderer;
 import net.minecraft.client.renderer.entity.state.HumanoidRenderState;
 import net.minecraft.client.renderer.item.ItemModelResolver;

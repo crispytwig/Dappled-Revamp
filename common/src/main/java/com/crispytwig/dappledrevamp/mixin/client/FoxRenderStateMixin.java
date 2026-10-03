@@ -1,6 +1,6 @@
 package com.crispytwig.dappledrevamp.mixin.client;
 
-import com.crispytwig.dappledrevamp.fox.GreyFox;
+import com.crispytwig.dappledrevamp.world.entity.animal.fox.GreyFox;
 import net.minecraft.client.renderer.entity.state.FoxRenderState;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;

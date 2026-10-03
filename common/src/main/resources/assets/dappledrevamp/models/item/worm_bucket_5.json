@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "dappledrevamp:item/worm_bucket_5"
-  }
-}

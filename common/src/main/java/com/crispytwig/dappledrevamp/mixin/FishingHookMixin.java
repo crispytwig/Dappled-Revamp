@@ -1,8 +1,8 @@
 package com.crispytwig.dappledrevamp.mixin;
 
-import com.crispytwig.dappledrevamp.worm.Bait;
-import com.crispytwig.dappledrevamp.worm.Worm;
-import com.crispytwig.dappledrevamp.worm.WormContent;
+import com.crispytwig.dappledrevamp.registry.ModItems;
+import com.crispytwig.dappledrevamp.world.entity.animal.worm.Worm;
+import com.crispytwig.dappledrevamp.world.item.Bait;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import net.minecraft.world.InteractionHand;
@@ -32,7 +32,7 @@ public abstract class FishingHookMixin {
         require = 0
     )
     private boolean dappledRevamp$keepFishingWithBaitedRod(ItemStack stack, Object item, Operation<Boolean> original) {
-        return original.call(stack, item) || stack.is(WormContent.BAITED_ROD.get());
+        return original.call(stack, item) || stack.is(ModItems.BAITED_ROD.get());
     }
 
     @Inject(method = "retrieve", at = @At("RETURN"))
