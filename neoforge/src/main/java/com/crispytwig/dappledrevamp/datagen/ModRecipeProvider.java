@@ -23,7 +23,9 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.ItemStackTemplate;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.component.SuspiciousStewEffects;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
+import net.minecraft.world.level.ItemLike;
 import org.jspecify.annotations.Nullable;
 
 import java.util.List;
@@ -66,6 +68,7 @@ public class ModRecipeProvider extends RecipeProvider {
     @Override
     protected void buildRecipes() {
         misc();
+        leafLayers();
         moist();
     }
 
@@ -87,6 +90,18 @@ public class ModRecipeProvider extends RecipeProvider {
                 .group("suspicious_stew")
                 .unlockedBy("has_ingredient", has(Items.SHELF_MUSHROOM))
                 .save(this.recipes, id("suspicious_stew_from_shelf_mushroom"));
+    }
+
+    private void leafLayers() {
+        leafLayer(ModBlocks.RED_POPLAR_LEAF_LAYER.get(), Items.RED_POPLAR_LEAVES);
+        leafLayer(ModBlocks.ORANGE_POPLAR_LEAF_LAYER.get(), Items.ORANGE_POPLAR_LEAVES);
+        leafLayer(ModBlocks.YELLOW_POPLAR_LEAF_LAYER.get(), Items.YELLOW_POPLAR_LEAVES);
+    }
+
+    private void leafLayer(ItemLike layer, ItemLike leaves) {
+        slabBuilder(RecipeCategory.BUILDING_BLOCKS, layer, Ingredient.of(leaves))
+                .unlockedBy(getHasName(leaves), has(leaves))
+                .save(this.recipes, id(getItemName(layer)));
     }
 
     private void moist() {

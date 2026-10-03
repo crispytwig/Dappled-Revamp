@@ -1,8 +1,11 @@
 {
+  "block.dappledrevamp.orange_poplar_leaf_layer": "Orange Poplar Leaf Layer",
   "block.dappledrevamp.patchy_grass": "Patchy Grass",
   "block.dappledrevamp.patchy_podzol": "Patchy Podzol",
+  "block.dappledrevamp.red_poplar_leaf_layer": "Red Poplar Leaf Layer",
   "block.dappledrevamp.regolith": "Regolith",
   "block.dappledrevamp.worm_bin": "Worm Bin",
+  "block.dappledrevamp.yellow_poplar_leaf_layer": "Yellow Poplar Leaf Layer",
   "entity.dappledrevamp.worm": "Worm",
   "item.dappledrevamp.baited_rod": "Baited Rod",
   "item.dappledrevamp.moist": "Moist %s",

@@ -4,6 +4,7 @@ import com.crispytwig.dappledrevamp.DappledRevamp;
 import com.crispytwig.dappledrevamp.registry.ModBlocks;
 import com.crispytwig.dappledrevamp.registry.ModDataComponents;
 import com.crispytwig.dappledrevamp.registry.ModItems;
+import com.crispytwig.dappledrevamp.world.level.block.LeafLayerBlock;
 import com.crispytwig.dappledrevamp.world.level.block.PoplarColor;
 import com.crispytwig.dappledrevamp.world.level.block.RegolithBlock;
 import net.minecraft.client.color.item.GrassColorSource;
@@ -98,6 +99,9 @@ public class ModModelProvider extends ModelProvider {
         patchyPodzol(blockModels);
         regolith(blockModels);
         wormBin(blockModels);
+        leafLayer(blockModels, ModBlocks.RED_POPLAR_LEAF_LAYER.get(), Blocks.RED_POPLAR_LEAVES);
+        leafLayer(blockModels, ModBlocks.ORANGE_POPLAR_LEAF_LAYER.get(), Blocks.ORANGE_POPLAR_LEAVES);
+        leafLayer(blockModels, ModBlocks.YELLOW_POPLAR_LEAF_LAYER.get(), Blocks.YELLOW_POPLAR_LEAVES);
         poplarSaplings(blockModels);
 
         simpleItem(itemModels, ModItems.WORM.get());
@@ -167,6 +171,23 @@ public class ModModelProvider extends ModelProvider {
                     BlockModelGenerators.plainVariant(ModelLocationUtils.getModelLocation(Blocks.COMPOSTER, suffix)));
         }
         blockModels.blockStateOutput.accept(generator);
+    }
+
+    private void leafLayer(BlockModelGenerators blockModels, Block block, Block leaves) {
+        TextureMapping textures = TextureMapping.defaultTexture(leaves).copySlot(TextureSlot.TEXTURE, TextureSlot.PARTICLE);
+        blockModels.blockStateOutput.accept(MultiVariantGenerator.dispatch(block).with(PropertyDispatch.initial(LeafLayerBlock.LAYERS)
+                .generate(layers -> BlockModelGenerators.plainVariant(layers < 8
+                        ? snowHeight(layers * 2).createWithSuffix(block, "_height" + layers * 2, textures, blockModels.modelOutput)
+                        : ModelLocationUtils.getModelLocation(leaves)))));
+        blockModels.registerSimpleItemModel(block, ModelLocationUtils.getModelLocation(block, "_height2"));
+    }
+
+    private static ExtendedModelTemplate snowHeight(int height) {
+        return ExtendedModelTemplateBuilder.builder()
+                .parent(Identifier.withDefaultNamespace("block/snow_height" + height))
+                .requiredTextureSlot(TextureSlot.TEXTURE)
+                .requiredTextureSlot(TextureSlot.PARTICLE)
+                .build();
     }
 
     private void poplarSaplings(BlockModelGenerators blockModels) {

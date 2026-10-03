@@ -24,7 +24,10 @@ public class ModCreativeTab {
             new Entry(SPAWN_EGGS, () -> Items.WOLF_SPAWN_EGG, ModItems.WORM_SPAWN_EGG),
             new Entry(NATURAL_BLOCKS, () -> Items.GRASS_BLOCK, ModBlocks.PATCHY_GRASS),
             new Entry(NATURAL_BLOCKS, () -> Items.PODZOL, ModBlocks.PATCHY_PODZOL),
-            new Entry(NATURAL_BLOCKS, () -> Items.COARSE_DIRT, ModBlocks.REGOLITH)
+            new Entry(NATURAL_BLOCKS, () -> Items.COARSE_DIRT, ModBlocks.REGOLITH),
+            new Entry(NATURAL_BLOCKS, () -> Items.RED_POPLAR_LEAVES, ModBlocks.RED_POPLAR_LEAF_LAYER),
+            new Entry(NATURAL_BLOCKS, () -> Items.ORANGE_POPLAR_LEAVES, ModBlocks.ORANGE_POPLAR_LEAF_LAYER),
+            new Entry(NATURAL_BLOCKS, () -> Items.YELLOW_POPLAR_LEAVES, ModBlocks.YELLOW_POPLAR_LEAF_LAYER)
     );
 
     private static ResourceKey<CreativeModeTab> vanilla(String name) {

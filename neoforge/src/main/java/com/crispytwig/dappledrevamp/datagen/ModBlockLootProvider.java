@@ -1,6 +1,7 @@
 package com.crispytwig.dappledrevamp.datagen;
 
 import com.crispytwig.dappledrevamp.registry.ModBlocks;
+import com.crispytwig.dappledrevamp.world.level.block.LeafLayerBlock;
 import com.crispytwig.dappledrevamp.world.level.block.PoplarColor;
 import net.minecraft.advancements.predicates.StatePropertiesPredicate;
 import net.minecraft.core.Holder;
@@ -42,6 +43,9 @@ public class ModBlockLootProvider extends BlockLootSubProvider {
     @Override
     protected void generate() {
         dropSelf(ModBlocks.REGOLITH.get());
+        add(ModBlocks.RED_POPLAR_LEAF_LAYER.get(), this::leafLayer);
+        add(ModBlocks.ORANGE_POPLAR_LEAF_LAYER.get(), this::leafLayer);
+        add(ModBlocks.YELLOW_POPLAR_LEAF_LAYER.get(), this::leafLayer);
         add(ModBlocks.PATCHY_GRASS.get(), block -> createSingleItemTableWithSilkTouch(block, Blocks.DIRT));
         add(ModBlocks.PATCHY_PODZOL.get(), block -> createSingleItemTableWithSilkTouch(block, Blocks.DIRT));
         add(ModBlocks.WORM_BIN.get(), block -> LootTable.lootTable()
@@ -60,6 +64,15 @@ public class ModBlockLootProvider extends BlockLootSubProvider {
                         .add(coloredSapling(Blocks.POTTED_POPLAR_SAPLING)))));
         add(Blocks.RED_POPLAR_LEAVES, coloredPoplarLeaves(Blocks.RED_POPLAR_LEAVES, PoplarColor.RED));
         add(Blocks.YELLOW_POPLAR_LEAVES, coloredPoplarLeaves(Blocks.YELLOW_POPLAR_LEAVES, PoplarColor.YELLOW));
+    }
+
+    private LootTable.Builder leafLayer(Block block) {
+        return LootTable.lootTable()
+                .withPool(LootPool.lootPool()
+                        .setRolls(ContextIntProviders.exactly(1))
+                        .add((LootPoolEntryContainer.Builder<?>) applyExplosionDecay(block, LootItem.lootTableItem(block)
+                                .apply(LeafLayerBlock.LAYERS.getPossibleValues(), layers -> SetItemCountFunction.setCount(ContextIntProviders.exactly(layers))
+                                        .when(MatchBlock.blockMatches(this.blocks, block, StatePropertiesPredicate.Builder.properties().hasProperty(LeafLayerBlock.LAYERS, layers.intValue())))))));
     }
 
     private LootTable.Builder flowerPotTable() {

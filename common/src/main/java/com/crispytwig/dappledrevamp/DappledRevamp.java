@@ -5,6 +5,7 @@ import com.crispytwig.dappledrevamp.registry.ModDataComponents;
 import com.crispytwig.dappledrevamp.registry.ModEntityTypes;
 import com.crispytwig.dappledrevamp.registry.ModFeatures;
 import com.crispytwig.dappledrevamp.registry.ModItems;
+import com.crispytwig.dappledrevamp.registry.ModParticleTypes;
 import com.crispytwig.dappledrevamp.registry.ModRecipes;
 import com.crispytwig.dappledrevamp.registry.ModSoundEvents;
 import com.crispytwig.dappledrevamp.world.entity.animal.fox.GreyFox;
@@ -37,6 +38,7 @@ public final class DappledRevamp {
     public static void bootstrap() {
         touch(ModDataComponents.DATA_COMPONENT_TYPES);
         touch(ModSoundEvents.SOUND_EVENTS);
+        touch(ModParticleTypes.PARTICLE_TYPES);
         touch(ModEntityTypes.ENTITY_TYPES);
         touch(ModItems.ITEMS);
         touch(ModBlocks.BLOCKS);

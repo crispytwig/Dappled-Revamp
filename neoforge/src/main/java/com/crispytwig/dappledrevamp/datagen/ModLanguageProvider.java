@@ -18,9 +18,12 @@ public class ModLanguageProvider extends LanguageProvider {
         add("item.dappledrevamp.moist", "Moist %s");
 
         add("block.dappledrevamp.patchy_grass", "Patchy Grass");
+        add("block.dappledrevamp.orange_poplar_leaf_layer", "Orange Poplar Leaf Layer");
         add("block.dappledrevamp.patchy_podzol", "Patchy Podzol");
+        add("block.dappledrevamp.red_poplar_leaf_layer", "Red Poplar Leaf Layer");
         add("block.dappledrevamp.regolith", "Regolith");
         add("block.dappledrevamp.worm_bin", "Worm Bin");
+        add("block.dappledrevamp.yellow_poplar_leaf_layer", "Yellow Poplar Leaf Layer");
 
         add("entity.dappledrevamp.worm", "Worm");
 

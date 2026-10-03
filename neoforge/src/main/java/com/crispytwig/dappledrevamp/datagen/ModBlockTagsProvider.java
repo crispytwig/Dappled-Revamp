@@ -25,6 +25,11 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
         tag(blockTag("minecraft:mineable/axe"))
                 .add(block(ModBlocks.WORM_BIN.get()));
 
+        tag(blockTag("minecraft:mineable/hoe"))
+                .add(block(ModBlocks.RED_POPLAR_LEAF_LAYER.get()))
+                .add(block(ModBlocks.ORANGE_POPLAR_LEAF_LAYER.get()))
+                .add(block(ModBlocks.YELLOW_POPLAR_LEAF_LAYER.get()));
+
         tag(blockTag("minecraft:mineable/shovel"))
                 .add(block(ModBlocks.PATCHY_GRASS.get()))
                 .add(block(ModBlocks.REGOLITH.get()));

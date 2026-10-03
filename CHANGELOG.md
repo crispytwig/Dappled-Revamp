@@ -51,7 +51,11 @@
   - Poplar Leaves now drop their relevant color.
 - **Poplar Trapdoors**' texture has been edited to be solid and tile better even if not completely.
 - **Poplar Trees** now generate taller, with thinner and taller leaf canopies similar to Aspens.
-- Poplar Trees now have a 5% chance to generate with a Bee Nest.
+- Poplar Trees now have a 5% chance to generate with a **Bee Nest**.
+- **Poplar Leaf Layers** can be crafted from 3 matching Poplar Leaves in a row, similar to Slabs or Snow Layers. `(makes 6)`
+  - They can be placed and stacked up to 8 layers like Snow Layers.
+  - Leaf Layers can be walked through, slowing movement like Sweet Berries.
+  - Falling into them reduces fall damage by 10% per layer `(up to 80%)`, and bursts particles like jumping into a pile of leaves!
 - **Poplar Villages** now spawn in Dappled Forests.
   - Poplar Villages have a 1 in 5 chance to be abandoned.
 
@@ -59,7 +63,7 @@
 ### Shelf Mushrooms
 - **Shelf Mushrooms** now only generate 3-6 blocks above the ground, and require 1 block of Air above to generate.
   - This guarantees they'll spawn higher on trunks instead of near the ground and will not spawn too close underneath logs/leaves _(more of a personal preference)._
-- Shelf Mushrooms can now be used as the "flower" in **Suspicious Stew** - 1 Brown Mushroom, 1 Red Mushroom, 1 Shelf Mushroom, and 1 Bowl give 0:08 of **Jump Boost**.
+- Shelf Mushrooms can now be used as the "flower" in **Suspicious Stew** - 1 Brown Mushroom, 1 Red Mushroom, 1 Shelf Mushroom, and 1 Bowl gives 0:08 of **Jump Boost**.
 
 
 
