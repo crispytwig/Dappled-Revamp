@@ -2,5 +2,13 @@
   "tooltip.dappledrevamp.poplar_sapling.orange": "Orange Poplar",
   "tooltip.dappledrevamp.poplar_sapling.red": "Red Poplar",
   "tooltip.dappledrevamp.poplar_sapling.yellow": "Yellow Poplar",
-  "item.dappledrevamp.moist": "Moist %s"
+  "item.dappledrevamp.moist": "Moist %s",
+  "entity.dappledrevamp.worm": "Worm",
+  "item.dappledrevamp.worm": "Worm",
+  "item.dappledrevamp.worm_bucket": "Worm Bucket",
+  "item.dappledrevamp.baited_rod": "Baited Rod",
+  "item.dappledrevamp.worm_spawn_egg": "Worm Spawn Egg",
+  "block.dappledrevamp.worm_bin": "Worm Bin",
+  "subtitles.dappledrevamp.item.worm.bait": "Worm baited",
+  "subtitles.dappledrevamp.item.worm.hook": "Worm wriggles"
 }

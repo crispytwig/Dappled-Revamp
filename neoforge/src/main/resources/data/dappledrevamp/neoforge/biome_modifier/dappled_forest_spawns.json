@@ -6,6 +6,15 @@
       "type": "minecraft:wolf",
       "count": 4,
       "weight": 5
+    },
+    {
+      "type": "dappledrevamp:worm",
+      "count": {
+        "type": "minecraft:uniform",
+        "min_inclusive": 2,
+        "max_inclusive": 4
+      },
+      "weight": 10
     }
   ]
 }

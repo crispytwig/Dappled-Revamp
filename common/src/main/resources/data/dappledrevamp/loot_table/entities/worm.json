@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "dappledrevamp:worm"
+        }
+      ],
+      "rolls": 1
+    }
+  ],
+  "random_sequence": "dappledrevamp:entities/worm"
+}

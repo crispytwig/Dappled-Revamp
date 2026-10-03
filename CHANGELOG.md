@@ -3,6 +3,29 @@
   - Grey Foxes are skins of basic Foxes, but spawn in Dappled Forests.
 
 
+- Added **Worms**.
+    - Worms spawn in Dappled Forests in groups of 2-4 during rainy weather.
+      - When it stops raining, Worms dry up with a 50% chance to leave behind a Worm item.
+      - Worms seek out Farmland with "unripe" crops and burrow into it, Bone Meal-ing the crop.
+      - Worms drop 1 Worm when killed.
+      - **Chickens** kill Worms, and can now be tempted and bred with Worm items.
+  - Added **Worm Buckets**.
+    - Using an empty Bucket on a Worm captures it - up to 5 Worms can be stored in a single Bucket.
+    - Worms can be placed from the Worm Bucket 1 at a time.
+  - Added **Baited Rods**.
+    - Holding a Worm or Worm Bucket in one hand and using a Fishing Rod in the other baits the Fishing Rod, turning it into a Baited Rod. Using a Fishing Rod on a Worm entity and reeling it in also baits it.
+      - Baited Rods can not be cast for 1 second after baiting.
+      - ***For mod/pack authors,*** which items count as bait is controlled by the `dappledrevamp:fishing_bait` item tag.
+    - Baited Rods act like an early-game form of the **Lure** enchantment, causing quicker bites while fishing.
+      - This stacks with real Lure enchantments.
+    - When something is reeled in after using the Baited Rod, it turns back into a normal Fishing Rod and consumes durability like normal.
+    - Durability & Enchantments carry over from Baited Rod ↔ Fishing Rod.
+- Added the **Worm Bin**, crafted from 1 Composter and 1 Worm.
+  - Works like a Composter, but the first item always adds a layer and every item after gets 2x the value.
+  - The Worms inside slowly compost on their own, adding ~1 layer per in-game day.
+  - Hoppers can fill and empty it like a Composter.
+
+
 ### Forest Generation
 - **Dappled Forests** are now larger and more consistent, similar to Taigas and Forests.
   - Their placement has changed from being small strips within Plains to spawning between Taigas and Plains as a transition biome.

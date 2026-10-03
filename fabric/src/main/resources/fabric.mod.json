@@ -12,6 +12,9 @@
   "entrypoints": {
     "main": [
       "com.crispytwig.dappledrevamp.fabric.DappledRevampFabric"
+    ],
+    "client": [
+      "com.crispytwig.dappledrevamp.fabric.DappledRevampFabricClient"
     ]
   },
   "mixins": [
