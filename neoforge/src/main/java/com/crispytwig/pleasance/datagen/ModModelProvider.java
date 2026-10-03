@@ -7,6 +7,7 @@ import com.crispytwig.pleasance.registry.ModItems;
 import com.crispytwig.pleasance.world.level.block.LeafLayerBlock;
 import com.crispytwig.pleasance.world.level.block.PoplarColor;
 import com.crispytwig.pleasance.world.level.block.RegolithBlock;
+import com.crispytwig.pleasance.world.level.block.ShelvedMushroom;
 import net.minecraft.client.color.item.GrassColorSource;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
@@ -103,6 +104,7 @@ public class ModModelProvider extends ModelProvider {
         leafLayer(blockModels, ModBlocks.ORANGE_POPLAR_LEAF_LAYER.get(), Blocks.ORANGE_POPLAR_LEAVES);
         leafLayer(blockModels, ModBlocks.YELLOW_POPLAR_LEAF_LAYER.get(), Blocks.YELLOW_POPLAR_LEAVES);
         poplarSaplings(blockModels);
+        shelfMushroom(blockModels);
 
         simpleItem(itemModels, ModItems.WORM.get());
         spawnEgg(itemModels, ModItems.WORM_SPAWN_EGG.get());
@@ -214,6 +216,15 @@ public class ModModelProvider extends ModelProvider {
                 ItemModelUtils.plainModel(ModelLocationUtils.getModelLocation(Items.POPLAR_SAPLING)), itemCases));
     }
 
+    private void shelfMushroom(BlockModelGenerators blockModels) {
+        blockModels.blockStateOutput.accept(MultiVariantGenerator.dispatch(Blocks.SHELF_MUSHROOM)
+                .with(PropertyDispatch.initial(BlockStateProperties.AGE_1, ShelvedMushroom.PROPERTY).generate((age, shelved) ->
+                        BlockModelGenerators.plainVariant(shelved
+                                ? Pleasance.location("block/shelf_mushroom_stage" + age + "_shelved")
+                                : ModelLocationUtils.getModelLocation(Blocks.SHELF_MUSHROOM, "_stage" + age))))
+                .with(BlockModelGenerators.ROTATION_HORIZONTAL_FACING));
+    }
+
     private void simpleItem(ItemModelGenerators itemModels, Item item) {
         itemModels.generateFlatItem(item, ModelTemplates.FLAT_ITEM);
     }
@@ -235,7 +246,8 @@ public class ModModelProvider extends ModelProvider {
     @Override
     protected Stream<? extends Holder<Block>> getKnownBlocks() {
         return Stream.concat(super.getKnownBlocks(),
-                Stream.of(Blocks.POPLAR_SAPLING.builtInRegistryHolder(), Blocks.POTTED_POPLAR_SAPLING.builtInRegistryHolder()));
+                Stream.of(Blocks.POPLAR_SAPLING.builtInRegistryHolder(), Blocks.POTTED_POPLAR_SAPLING.builtInRegistryHolder(),
+                        Blocks.SHELF_MUSHROOM.builtInRegistryHolder()));
     }
 
     @Override

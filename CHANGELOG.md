@@ -67,6 +67,7 @@
 - **Shelf Mushrooms** now only generate 3-6 blocks above the ground, and require 1 block of Air above to generate.
   - This guarantees they'll spawn higher on trunks instead of near the ground and will not spawn too close underneath logs/leaves _(more of a personal preference)._
 - Shelf Mushrooms can now be used as the "flower" in **Suspicious Stew** - 1 Brown Mushroom, 1 Red Mushroom, 1 Shelf Mushroom, and 1 Bowl gives 0:08 of **Jump Boost**.
+- Shelf Mushrooms with a block on top of them shift up so their cap sits flush with the top of the block.
 
 
 

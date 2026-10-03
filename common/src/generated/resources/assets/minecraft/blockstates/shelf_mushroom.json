@@ -1,0 +1,64 @@
+{
+  "variants": {
+    "age=0,facing=east,shelved=false": {
+      "model": "minecraft:block/shelf_mushroom_stage0",
+      "y": 90
+    },
+    "age=0,facing=east,shelved=true": {
+      "model": "pleasance:block/shelf_mushroom_stage0_shelved",
+      "y": 90
+    },
+    "age=0,facing=north,shelved=false": {
+      "model": "minecraft:block/shelf_mushroom_stage0"
+    },
+    "age=0,facing=north,shelved=true": {
+      "model": "pleasance:block/shelf_mushroom_stage0_shelved"
+    },
+    "age=0,facing=south,shelved=false": {
+      "model": "minecraft:block/shelf_mushroom_stage0",
+      "y": 180
+    },
+    "age=0,facing=south,shelved=true": {
+      "model": "pleasance:block/shelf_mushroom_stage0_shelved",
+      "y": 180
+    },
+    "age=0,facing=west,shelved=false": {
+      "model": "minecraft:block/shelf_mushroom_stage0",
+      "y": 270
+    },
+    "age=0,facing=west,shelved=true": {
+      "model": "pleasance:block/shelf_mushroom_stage0_shelved",
+      "y": 270
+    },
+    "age=1,facing=east,shelved=false": {
+      "model": "minecraft:block/shelf_mushroom_stage1",
+      "y": 90
+    },
+    "age=1,facing=east,shelved=true": {
+      "model": "pleasance:block/shelf_mushroom_stage1_shelved",
+      "y": 90
+    },
+    "age=1,facing=north,shelved=false": {
+      "model": "minecraft:block/shelf_mushroom_stage1"
+    },
+    "age=1,facing=north,shelved=true": {
+      "model": "pleasance:block/shelf_mushroom_stage1_shelved"
+    },
+    "age=1,facing=south,shelved=false": {
+      "model": "minecraft:block/shelf_mushroom_stage1",
+      "y": 180
+    },
+    "age=1,facing=south,shelved=true": {
+      "model": "pleasance:block/shelf_mushroom_stage1_shelved",
+      "y": 180
+    },
+    "age=1,facing=west,shelved=false": {
+      "model": "minecraft:block/shelf_mushroom_stage1",
+      "y": 270
+    },
+    "age=1,facing=west,shelved=true": {
+      "model": "pleasance:block/shelf_mushroom_stage1_shelved",
+      "y": 270
+    }
+  }
+}
