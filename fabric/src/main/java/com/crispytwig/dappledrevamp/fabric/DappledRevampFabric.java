@@ -17,6 +17,7 @@ import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.data.worldgen.placement.AquaticPlacements;
 import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.entity.EntityTypes;
@@ -75,6 +76,7 @@ public class DappledRevampFabric implements ModInitializer, GreyFox.Storage {
             BiomeModifications.addFeature(dappledForest, GenerationStep.Decoration.VEGETAL_DECORATION,
                 ResourceKey.create(Registries.PLACED_FEATURE, DappledRevamp.location(name)));
         }
+        BiomeModifications.addFeature(dappledForest, GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.SEAGRASS_RIVER);
         BiomeModifications.addFeature(dappledForest, GenerationStep.Decoration.UNDERGROUND_DECORATION,
             ResourceKey.create(Registries.PLACED_FEATURE, DappledRevamp.location("dirt_cave_lining")));
         BiomeModifications.addCarver(dappledForest, ResourceKey.create(Registries.CARVER, DappledRevamp.location("surface_cave")));

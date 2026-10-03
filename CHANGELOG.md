@@ -36,6 +36,7 @@
 - Added Red Mushrooms, Sweet Berry Bushes, Pumpkins, leaf bushes, Ferns, Dandelions, Poppies, and small patches of Sunflowers to Dappled Forest generation, and Short Grass is more common.
 - Tall Birch trees from Old Growth Birch Forests now generate in Dappled Forests, with Leaf Litter beneath them.
 - **Huge Brown Mushrooms** now occasionally generate in Dappled Forests.
+- Water in Dappled Forests now generates Seagrass, like Rivers.
 - Dappled Forests now have small **dirt caves** coming from the surface, and normal caves that generate here now have deeper Dirt, Grass, and Moss Block generation.
   - **Regolith** now lines Dirt → Stone transitions underground in Dappled Forests. This does not apply to exposed Dirt/Stone on cliffsides.
 - **Patchy Grass** now generates around the edges of Coarse Dirt patches.
