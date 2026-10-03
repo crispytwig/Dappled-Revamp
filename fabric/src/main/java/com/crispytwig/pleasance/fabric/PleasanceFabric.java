@@ -72,7 +72,7 @@ public class PleasanceFabric implements ModInitializer, GreyFox.Storage {
 
     private static void registerBiomeFeatures() {
         Predicate<BiomeSelectionContext> dappledForest = BiomeSelectors.includeByKey(Biomes.DAPPLED_FOREST);
-        for (String name : List.of("moss_patch", "hanging_roots", "red_mushroom", "patch_pumpkin", "patch_berry_bush", "patch_poplar_bush", "patch_sunflower", "patch_grass_dappled_forest", "flower_dappled_forest")) {
+        for (String name : List.of("moss_patch", "hanging_roots", "red_mushroom", "patch_pumpkin", "patch_berry_bush", "patch_poplar_bush", "patch_sunflower", "patch_grass_dappled_forest", "flower_dappled_forest", "roof_plants")) {
             BiomeModifications.addFeature(dappledForest, GenerationStep.Decoration.VEGETAL_DECORATION,
                 ResourceKey.create(Registries.PLACED_FEATURE, Pleasance.location(name)));
         }
