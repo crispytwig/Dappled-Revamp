@@ -33,7 +33,9 @@
 - **Dappled Forests** are now larger and more consistent, similar to Taigas and Forests.
   - Their placement has changed from being small strips within Plains to spawning between Taigas and Plains as a transition biome.
   - They replace the Forest biome in cold climates; Forests still generate in warmer areas.
-- Added Red Mushrooms, Sweet Berry Bushes, Pumpkins, leaf bushes, and small patches of Sunflowers to Dappled Forest generation.
+- Added Red Mushrooms, Sweet Berry Bushes, Pumpkins, leaf bushes, Ferns, Dandelions, Poppies, and small patches of Sunflowers to Dappled Forest generation, and Short Grass is more common.
+- Tall Birch trees from Old Growth Birch Forests now generate in Dappled Forests, with Leaf Litter beneath them.
+- **Huge Brown Mushrooms** now occasionally generate in Dappled Forests.
 - Dappled Forests now have small **dirt caves** coming from the surface, and normal caves that generate here now have deeper Dirt, Grass, and Moss Block generation.
   - **Regolith** now lines Dirt → Stone transitions underground in Dappled Forests. This does not apply to exposed Dirt/Stone on cliffsides.
 - **Patchy Grass** now generates around the edges of Coarse Dirt patches.
@@ -47,6 +49,7 @@
   - Poplar Sapling blocks now have a `Color` blockstate that determines what color they'll show and grow as.
   - Poplar Leaves now drop their relevant color.
 - **Poplar Trapdoors**' texture has been edited to be solid and tile better even if not completely.
+- **Poplar Trees** now generate taller, with thinner and taller leaf canopies similar to Aspens.
 - **Poplar Villages** now spawn in Dappled Forests.
   - Poplar Villages have a 1 in 5 chance to be abandoned.
 

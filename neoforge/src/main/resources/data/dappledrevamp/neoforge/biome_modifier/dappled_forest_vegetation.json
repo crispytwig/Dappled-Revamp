@@ -8,7 +8,9 @@
     "dappledrevamp:patch_pumpkin",
     "dappledrevamp:patch_berry_bush",
     "dappledrevamp:patch_poplar_bush",
-    "dappledrevamp:patch_sunflower"
+    "dappledrevamp:patch_sunflower",
+    "dappledrevamp:patch_grass_dappled_forest",
+    "dappledrevamp:flower_dappled_forest"
   ],
   "step": "vegetal_decoration"
 }
