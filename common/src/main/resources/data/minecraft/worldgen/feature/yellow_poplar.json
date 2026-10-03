@@ -3,6 +3,10 @@
   "below_trunk_provider": "minecraft:soil_beneath_tree",
   "decorators": [
     {
+      "type": "minecraft:beehive",
+      "probability": 0.05
+    },
+    {
       "type": "minecraft:shelf_mushroom",
       "probability": 0.4
     }

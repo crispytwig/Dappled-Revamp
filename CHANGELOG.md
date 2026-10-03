@@ -51,6 +51,7 @@
   - Poplar Leaves now drop their relevant color.
 - **Poplar Trapdoors**' texture has been edited to be solid and tile better even if not completely.
 - **Poplar Trees** now generate taller, with thinner and taller leaf canopies similar to Aspens.
+- Poplar Trees now have a 5% chance to generate with a Bee Nest.
 - **Poplar Villages** now spawn in Dappled Forests.
   - Poplar Villages have a 1 in 5 chance to be abandoned.
 
