@@ -30,6 +30,6 @@ public class DappledRevampNeoForgeClient {
     }
 
     private static void registerBlockColors(RegisterColorHandlersEvent.BlockTintSources event) {
-        event.register(List.of(BlockTintSources.grassBlock()), ModBlocks.PATCHY_GRASS.get());
+        event.register(List.of(BlockTintSources.grassBlock()), ModBlocks.PATCHY_GRASS.get(), ModBlocks.PATCHY_PODZOL.get());
     }
 }

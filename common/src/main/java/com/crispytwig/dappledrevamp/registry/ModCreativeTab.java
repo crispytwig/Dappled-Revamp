@@ -23,6 +23,7 @@ public class ModCreativeTab {
             new Entry(FUNCTIONAL_BLOCKS, () -> Items.COMPOSTER, ModBlocks.WORM_BIN),
             new Entry(SPAWN_EGGS, () -> Items.WOLF_SPAWN_EGG, ModItems.WORM_SPAWN_EGG),
             new Entry(NATURAL_BLOCKS, () -> Items.GRASS_BLOCK, ModBlocks.PATCHY_GRASS),
+            new Entry(NATURAL_BLOCKS, () -> Items.PODZOL, ModBlocks.PATCHY_PODZOL),
             new Entry(NATURAL_BLOCKS, () -> Items.COARSE_DIRT, ModBlocks.REGOLITH)
     );
 

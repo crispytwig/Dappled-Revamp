@@ -35,7 +35,9 @@
   - They replace the Forest biome in cold climates; Forests still generate in warmer areas.
 - Added Red Mushrooms, Sweet Berry Bushes, Pumpkins, leaf bushes, and small patches of Sunflowers to Dappled Forest generation.
 - Dappled Forests now have small **dirt caves** coming from the surface, and normal caves that generate here now have deeper Dirt, Grass, and Moss Block generation.
-  - Regolith now lines Dirt → Stone transitions underground in Dappled Forests. This does not apply to exposed Dirt/Stone on cliffsides.
+  - **Regolith** now lines Dirt → Stone transitions underground in Dappled Forests. This does not apply to exposed Dirt/Stone on cliffsides.
+- **Patchy Grass** now generates around the edges of Coarse Dirt patches.
+- Dappled Forests now have **Podzol** patches with **Patchy Podzol** around their edges.
 
 
 ### Poplar Changes

@@ -43,6 +43,7 @@ public class ModBlockLootProvider extends BlockLootSubProvider {
     protected void generate() {
         dropSelf(ModBlocks.REGOLITH.get());
         add(ModBlocks.PATCHY_GRASS.get(), block -> createSingleItemTableWithSilkTouch(block, Blocks.DIRT));
+        add(ModBlocks.PATCHY_PODZOL.get(), block -> createSingleItemTableWithSilkTouch(block, Blocks.DIRT));
         add(ModBlocks.WORM_BIN.get(), block -> LootTable.lootTable()
                 .withPool(LootPool.lootPool().add((LootPoolEntryContainer.Builder<?>) applyExplosionDecay(block, LootItem.lootTableItem(block))))
                 .withPool(LootPool.lootPool()

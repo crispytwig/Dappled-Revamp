@@ -43,6 +43,8 @@ import java.util.stream.Stream;
 public class ModModelProvider extends ModelProvider {
     private static final TextureSlot TOP_OVERLAY = TextureSlot.create("top_overlay");
     private static final TextureSlot OVERLAY = TextureSlot.create("overlay");
+    private static final TextureSlot PODZOL_TOP_OVERLAY = TextureSlot.create("podzol_top_overlay");
+    private static final TextureSlot PODZOL_OVERLAY = TextureSlot.create("podzol_overlay");
 
     private static final ExtendedModelTemplate OVERLAY_GRASS_BLOCK = ExtendedModelTemplateBuilder.builder()
             .parent(Identifier.withDefaultNamespace("block/block"))
@@ -63,6 +65,29 @@ public class ModModelProvider extends ModelProvider {
                     .allFacesExcept((direction, face) -> face.uvs(0, 0, 16, 16).texture(OVERLAY).cullface(direction).tintindex(0), Set.of(Direction.DOWN, Direction.UP)))
             .build();
 
+    private static final ExtendedModelTemplate OVERLAY_PODZOL_GRASS_BLOCK = ExtendedModelTemplateBuilder.builder()
+            .parent(Identifier.withDefaultNamespace("block/block"))
+            .requiredTextureSlot(TextureSlot.PARTICLE)
+            .requiredTextureSlot(TextureSlot.BOTTOM)
+            .requiredTextureSlot(TextureSlot.TOP)
+            .requiredTextureSlot(TextureSlot.SIDE)
+            .requiredTextureSlot(OVERLAY)
+            .requiredTextureSlot(PODZOL_TOP_OVERLAY)
+            .requiredTextureSlot(PODZOL_OVERLAY)
+            .element(element -> element
+                    .from(0, 0, 0).to(16, 16, 16)
+                    .face(Direction.DOWN, face -> face.uvs(0, 0, 16, 16).texture(TextureSlot.BOTTOM).cullface(Direction.DOWN))
+                    .face(Direction.UP, face -> face.uvs(0, 0, 16, 16).texture(TextureSlot.TOP).cullface(Direction.UP).tintindex(0))
+                    .allFacesExcept((direction, face) -> face.uvs(0, 0, 16, 16).texture(TextureSlot.SIDE).cullface(direction), Set.of(Direction.DOWN, Direction.UP)))
+            .element(element -> element
+                    .from(0, 0, 0).to(16, 16, 16)
+                    .allFacesExcept((direction, face) -> face.uvs(0, 0, 16, 16).texture(OVERLAY).cullface(direction).tintindex(0), Set.of(Direction.DOWN, Direction.UP)))
+            .element(element -> element
+                    .from(0, 0, 0).to(16, 16, 16)
+                    .face(Direction.UP, face -> face.uvs(0, 0, 16, 16).texture(PODZOL_TOP_OVERLAY).cullface(Direction.UP))
+                    .allFacesExcept((direction, face) -> face.uvs(0, 0, 16, 16).texture(PODZOL_OVERLAY).cullface(direction), Set.of(Direction.DOWN, Direction.UP)))
+            .build();
+
     public ModModelProvider(PackOutput output) {
         super(output, DappledRevamp.MOD_ID);
     }
@@ -70,6 +95,7 @@ public class ModModelProvider extends ModelProvider {
     @Override
     protected void registerModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
         patchyGrass(blockModels);
+        patchyPodzol(blockModels);
         regolith(blockModels);
         wormBin(blockModels);
         poplarSaplings(blockModels);
@@ -113,6 +139,22 @@ public class ModModelProvider extends ModelProvider {
                 .select(RegolithBlock.Segment.MIDDLE, BlockModelGenerators.plainVariant(middle))
                 .select(RegolithBlock.Segment.BOTTOM, BlockModelGenerators.plainVariant(bottom))));
         blockModels.registerSimpleItemModel(block, middle);
+    }
+
+    private void patchyPodzol(BlockModelGenerators blockModels) {
+        Block block = ModBlocks.PATCHY_PODZOL.get();
+        TextureMapping textures = new TextureMapping()
+                .put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(Blocks.DIRT))
+                .put(TextureSlot.BOTTOM, TextureMapping.getBlockTexture(Blocks.DIRT))
+                .put(TextureSlot.TOP, TextureMapping.getBlockTexture(Blocks.GRASS_BLOCK, "_top"))
+                .put(TextureSlot.SIDE, TextureMapping.getBlockTexture(Blocks.DIRT))
+                .put(OVERLAY, TextureMapping.getBlockTexture(Blocks.GRASS_BLOCK, "_side_overlay"))
+                .put(PODZOL_TOP_OVERLAY, TextureMapping.getBlockTexture(block, "_top_overlay"))
+                .put(PODZOL_OVERLAY, TextureMapping.getBlockTexture(block, "_side_overlay"));
+        Identifier model = OVERLAY_PODZOL_GRASS_BLOCK.create(block, textures, blockModels.modelOutput);
+        MultiVariant snowy = BlockModelGenerators.plainVariant(ModelLocationUtils.getModelLocation(Blocks.GRASS_BLOCK, "_snow"));
+        blockModels.createGrassLikeBlock(block, BlockModelGenerators.createRotatedVariants(BlockModelGenerators.plainModel(model)), snowy);
+        blockModels.registerSimpleTintedItemModel(block, model, new GrassColorSource());
     }
 
     private void wormBin(BlockModelGenerators blockModels) {

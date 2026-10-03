@@ -19,6 +19,6 @@ public class DappledRevampFabricClient implements ClientModInitializer {
         DappledRevampClient.init();
         ModelLayerRegistry.registerModelLayer(WormRenderer.LAYER, WormModel::createBodyLayer);
         EntityRendererRegistry.register(ModEntityTypes.WORM.get(), WormRenderer::new);
-        BlockColorRegistry.register(List.of(BlockTintSources.grassBlock()), ModBlocks.PATCHY_GRASS.get());
+        BlockColorRegistry.register(List.of(BlockTintSources.grassBlock()), ModBlocks.PATCHY_GRASS.get(), ModBlocks.PATCHY_PODZOL.get());
     }
 }

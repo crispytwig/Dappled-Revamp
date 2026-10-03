@@ -39,6 +39,14 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
             tag(blockTag("minecraft:" + tag))
                     .add(block(ModBlocks.PATCHY_GRASS.get()));
         }
+
+        for (String tag : new String[]{
+                "cannot_replace_below_tree_trunk", "foxes_spawnable_on", "grass_blocks", "huge_brown_mushroom_can_place_on",
+                "huge_red_mushroom_can_place_on", "mineable/shovel", "overrides_mushroom_light_requirement", "sniffer_diggable_block",
+                "supports_big_dripleaf", "turns_into_dirt_path", "valid_spawn", "wolves_spawnable_on"}) {
+            tag(blockTag("minecraft:" + tag))
+                    .add(block(ModBlocks.PATCHY_PODZOL.get()));
+        }
     }
 
     private static ResourceKey<Block> block(Block block) {

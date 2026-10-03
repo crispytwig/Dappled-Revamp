@@ -42,7 +42,8 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(item(ModBlocks.REGOLITH.get()));
 
         tag(itemTag("minecraft:grass_blocks"))
-                .add(item(ModBlocks.PATCHY_GRASS.get()));
+                .add(item(ModBlocks.PATCHY_GRASS.get()))
+                .add(item(ModBlocks.PATCHY_PODZOL.get()));
     }
 
     private static ResourceKey<Item> item(ItemLike item) {

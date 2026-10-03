@@ -13,6 +13,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.GrassBlock;
+import net.minecraft.world.level.block.SnowyBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 
 import java.util.function.Function;
@@ -23,6 +24,7 @@ public class ModBlocks {
 
     public static final DeferredHolder<Block, WormBinBlock> WORM_BIN = registerBlock("worm_bin", WormBinBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(Blocks.COMPOSTER));
     public static final DeferredHolder<Block, GrassBlock> PATCHY_GRASS = registerBlock("patchy_grass", GrassBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(Blocks.GRASS_BLOCK));
+    public static final DeferredHolder<Block, SnowyBlock> PATCHY_PODZOL = registerBlock("patchy_podzol", properties -> new SnowyBlock(properties) {}, () -> BlockBehaviour.Properties.ofFullCopy(Blocks.PODZOL));
     public static final DeferredHolder<Block, RegolithBlock> REGOLITH = registerBlock("regolith", RegolithBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(Blocks.DIRT));
 
     private static ResourceKey<Block> blockKey(String name) {
