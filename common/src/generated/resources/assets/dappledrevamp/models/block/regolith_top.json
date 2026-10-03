@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "dappledrevamp:block/regolith",
+    "side": "dappledrevamp:block/regolith_top",
+    "top": "minecraft:block/dirt"
+  }
+}

@@ -3,6 +3,7 @@ package com.crispytwig.dappledrevamp;
 import com.crispytwig.dappledrevamp.registry.ModBlocks;
 import com.crispytwig.dappledrevamp.registry.ModDataComponents;
 import com.crispytwig.dappledrevamp.registry.ModEntityTypes;
+import com.crispytwig.dappledrevamp.registry.ModFeatures;
 import com.crispytwig.dappledrevamp.registry.ModItems;
 import com.crispytwig.dappledrevamp.registry.ModRecipes;
 import com.crispytwig.dappledrevamp.registry.ModSoundEvents;
@@ -40,6 +41,7 @@ public final class DappledRevamp {
         touch(ModItems.ITEMS);
         touch(ModBlocks.BLOCKS);
         touch(ModRecipes.RECIPE_SERIALIZERS);
+        touch(ModFeatures.FEATURE_TYPES);
     }
 
     private static void touch(Object registry) {

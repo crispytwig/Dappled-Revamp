@@ -6,6 +6,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.feature.VegetationPatchFeature;
 import net.minecraft.world.level.levelgen.placement.CaveSurface;
 import org.spongepowered.asm.mixin.Final;
@@ -32,7 +33,8 @@ public abstract class VegetationPatchFeatureMixin {
             return;
         }
         for (BlockPos top : cir.getReturnValue()) {
-            if (!level.getBlockState(top).is(Blocks.MOSS_BLOCK)) {
+            if (!level.getBlockState(top).is(Blocks.MOSS_BLOCK)
+                || top.getY() < level.getHeight(Heightmap.Types.OCEAN_FLOOR_WG, top.getX(), top.getZ()) - 1) {
                 continue;
             }
             BlockPos below = top.below();

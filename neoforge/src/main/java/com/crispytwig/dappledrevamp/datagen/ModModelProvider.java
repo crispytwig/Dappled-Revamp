@@ -5,6 +5,7 @@ import com.crispytwig.dappledrevamp.registry.ModBlocks;
 import com.crispytwig.dappledrevamp.registry.ModDataComponents;
 import com.crispytwig.dappledrevamp.registry.ModItems;
 import com.crispytwig.dappledrevamp.world.level.block.PoplarColor;
+import com.crispytwig.dappledrevamp.world.level.block.RegolithBlock;
 import net.minecraft.client.color.item.GrassColorSource;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
@@ -69,7 +70,7 @@ public class ModModelProvider extends ModelProvider {
     @Override
     protected void registerModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
         patchyGrass(blockModels);
-        blockModels.createTrivialCube(ModBlocks.REGOLITH.get());
+        regolith(blockModels);
         wormBin(blockModels);
         poplarSaplings(blockModels);
 
@@ -94,6 +95,24 @@ public class ModModelProvider extends ModelProvider {
         MultiVariant snowy = BlockModelGenerators.plainVariant(ModelLocationUtils.getModelLocation(Blocks.GRASS_BLOCK, "_snow"));
         blockModels.createGrassLikeBlock(block, BlockModelGenerators.createRotatedVariants(BlockModelGenerators.plainModel(model)), snowy);
         blockModels.registerSimpleTintedItemModel(block, model, new GrassColorSource());
+    }
+
+    private void regolith(BlockModelGenerators blockModels) {
+        Block block = ModBlocks.REGOLITH.get();
+        Identifier middle = ModelTemplates.CUBE_ALL.create(block, TextureMapping.cube(block), blockModels.modelOutput);
+        Identifier top = ModelTemplates.CUBE_BOTTOM_TOP.createWithSuffix(block, "_top", new TextureMapping()
+                .put(TextureSlot.TOP, TextureMapping.getBlockTexture(Blocks.DIRT))
+                .put(TextureSlot.SIDE, TextureMapping.getBlockTexture(block, "_top"))
+                .put(TextureSlot.BOTTOM, TextureMapping.getBlockTexture(block)), blockModels.modelOutput);
+        Identifier bottom = ModelTemplates.CUBE_BOTTOM_TOP.createWithSuffix(block, "_bottom", new TextureMapping()
+                .put(TextureSlot.TOP, TextureMapping.getBlockTexture(block))
+                .put(TextureSlot.SIDE, TextureMapping.getBlockTexture(block, "_bottom"))
+                .put(TextureSlot.BOTTOM, TextureMapping.getBlockTexture(Blocks.STONE)), blockModels.modelOutput);
+        blockModels.blockStateOutput.accept(MultiVariantGenerator.dispatch(block).with(PropertyDispatch.initial(RegolithBlock.SEGMENT)
+                .select(RegolithBlock.Segment.TOP, BlockModelGenerators.plainVariant(top))
+                .select(RegolithBlock.Segment.MIDDLE, BlockModelGenerators.plainVariant(middle))
+                .select(RegolithBlock.Segment.BOTTOM, BlockModelGenerators.plainVariant(bottom))));
+        blockModels.registerSimpleItemModel(block, middle);
     }
 
     private void wormBin(BlockModelGenerators blockModels) {

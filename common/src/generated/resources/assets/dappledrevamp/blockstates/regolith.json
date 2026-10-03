@@ -1,7 +1,13 @@
 {
   "variants": {
-    "": {
+    "segment=bottom": {
+      "model": "dappledrevamp:block/regolith_bottom"
+    },
+    "segment=middle": {
       "model": "dappledrevamp:block/regolith"
+    },
+    "segment=top": {
+      "model": "dappledrevamp:block/regolith_top"
     }
   }
 }

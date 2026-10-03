@@ -12,6 +12,7 @@ import net.fabricmc.fabric.api.attachment.v1.AttachmentRegistry;
 import net.fabricmc.fabric.api.attachment.v1.AttachmentSyncPredicate;
 import net.fabricmc.fabric.api.attachment.v1.AttachmentType;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
+import net.fabricmc.fabric.api.biome.v1.BiomeSelectionContext;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
@@ -27,6 +28,7 @@ import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.levelgen.GenerationStep;
 
 import java.util.List;
+import java.util.function.Predicate;
 
 public class DappledRevampFabric implements ModInitializer, GreyFox.Storage {
     private static final AttachmentType<Boolean> GREY = AttachmentRegistry.create(
@@ -68,10 +70,14 @@ public class DappledRevampFabric implements ModInitializer, GreyFox.Storage {
     }
 
     private static void registerBiomeFeatures() {
+        Predicate<BiomeSelectionContext> dappledForest = BiomeSelectors.includeByKey(Biomes.DAPPLED_FOREST);
         for (String name : List.of("moss_patch", "red_mushroom", "patch_pumpkin", "patch_berry_bush", "patch_poplar_bush", "patch_sunflower")) {
-            BiomeModifications.addFeature(BiomeSelectors.includeByKey(Biomes.DAPPLED_FOREST), GenerationStep.Decoration.VEGETAL_DECORATION,
+            BiomeModifications.addFeature(dappledForest, GenerationStep.Decoration.VEGETAL_DECORATION,
                 ResourceKey.create(Registries.PLACED_FEATURE, DappledRevamp.location(name)));
         }
+        BiomeModifications.addFeature(dappledForest, GenerationStep.Decoration.UNDERGROUND_DECORATION,
+            ResourceKey.create(Registries.PLACED_FEATURE, DappledRevamp.location("dirt_cave_lining")));
+        BiomeModifications.addCarver(dappledForest, ResourceKey.create(Registries.CARVER, DappledRevamp.location("surface_cave")));
     }
 
     @Override
