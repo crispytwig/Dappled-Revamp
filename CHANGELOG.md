@@ -24,7 +24,7 @@
     - When something is reeled in after using the Baited Rod, it turns back into a normal Fishing Rod and consumes durability like normal.
     - Durability & Enchantments carry over from Baited Rod ↔ Fishing Rod.
 - Added the **Worm Bin**, crafted from 1 Composter and 1 Worm.
-  - Works like a Composter, but the first item always adds a layer and every item after gets 2x the value.
+  - Works like a Composter, but only accepts edible food items. The first item always adds a layer and every item after gets 2x the value.
   - The Worms inside slowly compost on their own, adding ~1 layer per in-game day.
   - Hoppers can fill and empty it like a Composter.
 
