@@ -29,6 +29,7 @@
     "client.FirstPersonHandsAndItemsRendererMixin",
     "client.FoxRendererMixin",
     "client.FoxRenderStateMixin",
+    "client.GuiGraphicsExtractorMixin",
     "client.HumanoidMobRendererMixin",
     "client.HumanoidModelMixin",
     "client.HumanoidRenderStateMixin",

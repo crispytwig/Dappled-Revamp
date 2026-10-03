@@ -82,6 +82,16 @@ public class WormBucketItem extends Item {
     }
 
     @Override
+    public boolean isBarVisible(ItemStack stack) {
+        return getWormCount(stack) < MAX_WORMS;
+    }
+
+    @Override
+    public int getBarWidth(ItemStack stack) {
+        return Math.round(getWormCount(stack) * 13.0F / MAX_WORMS);
+    }
+
+    @Override
     public void appendHoverText(ItemStack stack, Item.TooltipContext context, TooltipDisplay display, Consumer<Component> builder, TooltipFlag flag) {
         int count = getWormCount(stack);
         MutableComponent row = Component.empty();
