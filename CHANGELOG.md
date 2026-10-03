@@ -38,6 +38,7 @@
   - **Regolith** now lines Dirt → Stone transitions underground in Dappled Forests. This does not apply to exposed Dirt/Stone on cliffsides.
 - **Patchy Grass** now generates around the edges of Coarse Dirt patches.
 - Dappled Forests now have **Podzol** patches with **Patchy Podzol** around their edges.
+- **Hanging Roots** now generate in clusters beneath Grass Block and Dirt ceilings in Dappled Forests, such as dirt caves and overhangs.
 
 
 ### Poplar Changes
