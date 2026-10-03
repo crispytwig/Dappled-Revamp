@@ -5,7 +5,9 @@
     "dappledrevamp:moss_patch",
     "dappledrevamp:red_mushroom",
     "dappledrevamp:patch_pumpkin",
-    "dappledrevamp:patch_berry_bush"
+    "dappledrevamp:patch_berry_bush",
+    "dappledrevamp:patch_poplar_bush",
+    "dappledrevamp:patch_sunflower"
   ],
   "step": "vegetal_decoration"
 }

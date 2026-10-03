@@ -53,7 +53,7 @@ public class DappledRevampFabric implements ModInitializer, GreyFox.Storage, Reg
         Registry.register(BuiltInRegistries.RECIPE_SERIALIZER, DappledRevamp.id("moisten"), MoistenRecipe.SERIALIZER);
         Registry.register(BuiltInRegistries.RECIPE_SERIALIZER, DappledRevamp.id("dry"), DryRecipe.SERIALIZER);
 
-        for (String feature : new String[]{"moss_patch", "red_mushroom","patch_pumpkin", "patch_berry_bush"}) {
+        for (String feature : new String[]{"moss_patch", "red_mushroom","patch_pumpkin", "patch_berry_bush", "patch_poplar_bush", "patch_sunflower"}) {
             BiomeModifications.addFeature(
                 BiomeSelectors.includeByKey(Biomes.DAPPLED_FOREST),
                 GenerationStep.Decoration.VEGETAL_DECORATION,

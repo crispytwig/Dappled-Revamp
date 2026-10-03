@@ -2,6 +2,7 @@ package com.crispytwig.dappledrevamp.mixin;
 
 import com.crispytwig.dappledrevamp.worm.Bait;
 import com.crispytwig.dappledrevamp.worm.WormContent;
+import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -43,7 +44,7 @@ public abstract class FishingRodItemMixin extends Item {
         ),
         index = 3
     )
-    private int dappledRevamp$baitedLure(int lureSpeed, Level level, Player player, InteractionHand hand) {
+    private int dappledRevamp$baitedLure(int lureSpeed, @Local(argsOnly = true) Player player, @Local(argsOnly = true) InteractionHand hand) {
         return player.getItemInHand(hand).is(WormContent.BAITED_ROD.get()) ? lureSpeed + 100 : lureSpeed;
     }
 
