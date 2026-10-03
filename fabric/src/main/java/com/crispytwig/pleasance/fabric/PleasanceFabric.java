@@ -18,6 +18,7 @@ import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.placement.AquaticPlacements;
+import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.entity.EntityTypes;
@@ -77,6 +78,7 @@ public class PleasanceFabric implements ModInitializer, GreyFox.Storage {
                 ResourceKey.create(Registries.PLACED_FEATURE, Pleasance.location(name)));
         }
         BiomeModifications.addFeature(dappledForest, GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.SEAGRASS_RIVER);
+        BiomeModifications.addFeature(dappledForest, GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_FIREFLY_BUSH_NEAR_WATER);
         BiomeModifications.addFeature(dappledForest, GenerationStep.Decoration.UNDERGROUND_DECORATION,
             ResourceKey.create(Registries.PLACED_FEATURE, Pleasance.location("dirt_cave_lining")));
         BiomeModifications.addCarver(dappledForest, ResourceKey.create(Registries.CARVER, Pleasance.location("surface_cave")));

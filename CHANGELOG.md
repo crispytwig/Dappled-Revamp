@@ -39,6 +39,7 @@
 - Tall Birch trees from Old Growth Birch Forests now generate in Dappled Forests, with Leaf Litter beneath them.
 - **Huge Brown Mushrooms** now occasionally generate in Dappled Forests.
 - Water in Dappled Forests now generates Seagrass, like Rivers.
+- **Firefly Bushes** now generate near water in Dappled Forests, like most other Overworld biomes.
 - Dappled Forests now have small **dirt caves** coming from the surface, and normal caves that generate here now have deeper Dirt, Grass, and Moss Block generation.
   - **Regolith** now lines Dirt → Stone transitions underground in Dappled Forests. This does not apply to exposed Dirt/Stone on cliffsides.
 - **Patchy Grass** now generates around the edges of Coarse Dirt patches.
