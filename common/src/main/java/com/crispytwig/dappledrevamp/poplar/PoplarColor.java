@@ -54,7 +54,8 @@ public enum PoplarColor implements StringRepresentable {
         return color == null ? ORANGE : color;
     }
 
-    public static boolean isPoplarSapling(@Nullable ResourceKey<Block> id) {
-        return id != null && id.identifier().equals(Identifier.withDefaultNamespace("poplar_sapling"));
+    public static boolean hasColor(@Nullable ResourceKey<Block> id) {
+        return id != null && (id.identifier().equals(Identifier.withDefaultNamespace("poplar_sapling"))
+            || id.identifier().equals(Identifier.withDefaultNamespace("potted_poplar_sapling")));
     }
 }

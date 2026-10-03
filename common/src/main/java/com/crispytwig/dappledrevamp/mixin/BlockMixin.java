@@ -29,7 +29,7 @@ public abstract class BlockMixin {
     ) {
         original.call(block, builder);
         ResourceKey<Block> id = ((BlockPropertiesAccessor) properties).dappledRevamp$getId();
-        if (PoplarColor.isPoplarSapling(id)) {
+        if (PoplarColor.hasColor(id)) {
             builder.add(PoplarColor.PROPERTY);
         }
         if (Moist.canBeMoist(id)) {

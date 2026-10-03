@@ -8,6 +8,7 @@
     "BlockMixin",
     "BlockPropertiesAccessor",
     "BlockStateBaseMixin",
+    "FlowerPotBlockMixin",
     "FoxMixin",
     "ItemStackMixin",
     "OverworldBiomeBuilderMixin",
