@@ -83,3 +83,7 @@
     - Unlike Farmland, tinted mossy blocks will not become `Moist` if nearby Water sources.
   - Moist blocks can be dried back to their normal state in Furnaces.
 
+
+### Misc.
+- Bushes, Red Shrubs, Azaleas, and Flowering Azaleas can be smelted into Dead Bushes.
+  - Firefly Bushes can be smelted into Dead Bushes too, and give Experience. Because you murdered them. You monster.

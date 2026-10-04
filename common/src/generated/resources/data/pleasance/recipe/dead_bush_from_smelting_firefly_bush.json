@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "experience": 0.5,
+  "ingredient": "minecraft:firefly_bush",
+  "result": {
+    "id": "minecraft:dead_bush"
+  }
+}

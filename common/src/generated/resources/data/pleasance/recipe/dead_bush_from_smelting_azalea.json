@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "ingredient": "minecraft:azalea",
+  "result": {
+    "id": "minecraft:dead_bush"
+  }
+}

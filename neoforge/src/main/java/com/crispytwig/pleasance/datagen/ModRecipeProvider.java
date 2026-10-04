@@ -17,12 +17,14 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.ItemStackTemplate;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.component.SuspiciousStewEffects;
+import net.minecraft.world.item.crafting.CookingBookCategory;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.level.ItemLike;
@@ -69,6 +71,7 @@ public class ModRecipeProvider extends RecipeProvider {
     protected void buildRecipes() {
         misc();
         leafLayers();
+        dryBushes();
         moist();
     }
 
@@ -102,6 +105,20 @@ public class ModRecipeProvider extends RecipeProvider {
         slabBuilder(RecipeCategory.BUILDING_BLOCKS, layer, Ingredient.of(leaves))
                 .unlockedBy(getHasName(leaves), has(leaves))
                 .save(this.recipes, id(getItemName(layer)));
+    }
+
+    private void dryBushes() {
+        dryBush(Items.BUSH, 0.0F);
+        dryBush(Items.RED_SHRUB, 0.0F);
+        dryBush(Items.AZALEA, 0.0F);
+        dryBush(Items.FLOWERING_AZALEA, 0.0F);
+        dryBush(Items.FIREFLY_BUSH, 0.5F);
+    }
+
+    private void dryBush(ItemLike bush, float experience) {
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(bush), RecipeCategory.DECORATIONS, CookingBookCategory.MISC, Items.DEAD_BUSH, experience, 200)
+                .unlockedBy(getHasName(bush), has(bush))
+                .save(this.recipes, id(getItemName(Items.DEAD_BUSH) + "_from_smelting_" + getItemName(bush)));
     }
 
     private void moist() {
