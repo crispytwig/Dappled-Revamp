@@ -23,6 +23,9 @@ public class ModBiomeTagsProvider extends TagsProvider<Biome> {
         tag(ModBiomeTags.SPAWNS_GREY_FOXES)
                 .add(Biomes.DAPPLED_FOREST);
 
+        tag(ModBiomeTags.HAS_SHELF_MUSHROOMS)
+                .add(Biomes.FOREST, Biomes.FLOWER_FOREST, Biomes.BIRCH_FOREST, Biomes.OLD_GROWTH_BIRCH_FOREST, Biomes.DARK_FOREST);
+
         tag(biomeTag("pleasance:has_structure/village_dappled"))
                 .add(Biomes.DAPPLED_FOREST);
     }

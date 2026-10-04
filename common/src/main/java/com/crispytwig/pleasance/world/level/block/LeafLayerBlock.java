@@ -59,11 +59,11 @@ public class LeafLayerBlock extends SnowLayerBlock {
         if (!(entity instanceof LivingEntity) || !(level.getBlockState(bottom).getBlock() instanceof LeafLayerBlock)) {
             return false;
         }
-        LivingEntityInvoker invoker = (LivingEntityInvoker) entity;
-        int fullDamage = invoker.pleasance$calculateFallDamage(fallDistance, 1.0F);
-        if (fullDamage <= 0) {
+        if (fallDistance < 1.0) {
             return false;
         }
+        LivingEntityInvoker invoker = (LivingEntityInvoker) entity;
+        int fullDamage = invoker.pleasance$calculateFallDamage(fallDistance, 1.0F);
 
         int available = 0;
         int height = 0;
@@ -78,8 +78,8 @@ public class LeafLayerBlock extends SnowLayerBlock {
         entity.causeFallDamage(fallDistance, damageModifier(consumed), entity.damageSources().fall());
 
         if (level instanceof ServerLevel serverLevel) {
-            int particles = Math.min(8 + fullDamage * 4, 64);
-            double speed = Math.min(0.08 + fullDamage * 0.02, 0.4);
+            int particles = Math.min(20 + fullDamage * 4, 64);
+            double speed = Math.min(0.12 + fullDamage * 0.02, 0.4);
             int remaining = consumed;
             for (int i = height - 1; i >= 0 && remaining > 0; i--) {
                 BlockPos pos = bottom.above(i);

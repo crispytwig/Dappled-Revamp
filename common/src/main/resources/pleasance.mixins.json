@@ -25,6 +25,7 @@
     "ShelfMushroomBlockMixin",
     "ShelfMushroomDecoratorMixin",
     "SpreadingSnowyBlockMixin",
+    "TreeFeatureMixin",
     "TreeGrowerMixin",
     "VegetationPatchFeatureMixin"
   ],

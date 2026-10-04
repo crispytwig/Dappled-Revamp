@@ -59,6 +59,7 @@
   - They can be placed and stacked up to 8 layers like Snow Layers.
   - Leaf Layers can be walked through, slowing movement like Sweet Berries.
   - Falling into them reduces fall damage by 10% per layer `(up to 80%)`, and bursts particles like jumping into a pile of leaves!
+  - Leaf Layers generate in piles under Poplar trees of the same color in Dappled Forests.
 - **Poplar Villages** now spawn in Dappled Forests.
   - Poplar Villages have a 1 in 5 chance to be abandoned.
 
@@ -66,6 +67,8 @@
 ### Shelf Mushrooms
 - **Shelf Mushrooms** now only generate 3-6 blocks above the ground, and require 1 block of Air above to generate.
   - This guarantees they'll spawn higher on trunks instead of near the ground and will not spawn too close underneath logs/leaves _(more of a personal preference)._
+- Shelf Mushrooms now also generate on Oak, Birch, and Dark Oak trees in **Forests**, **Flower Forests**, **Birch Forests**, **Old Growth Birch Forests**, and **Dark Forests**.
+  - ***For mod/pack authors,*** which biomes get them is controlled by the `pleasance:has_shelf_mushrooms` biome tag.
 - Shelf Mushrooms can now be used as the "flower" in **Suspicious Stew** - 1 Brown Mushroom, 1 Red Mushroom, 1 Shelf Mushroom, and 1 Bowl gives 0:08 of **Jump Boost**.
 - Shelf Mushrooms with a block on top of them shift up so their cap sits flush with the top of the block.
 
